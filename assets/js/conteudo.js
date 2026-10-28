@@ -738,16 +738,11 @@ window.LUMIAR_PROPOSTAS = [
 /* Estrutura do CAVC na proposta da Lumiar.
  * area:      liga o item às propostas acima (botão "ver propostas").
  * pendente:  texto ainda não escrito na carta. */
+/* A diretoria estatutária (topo do organograma) vem de "estatutarios" no config.js. */
 window.LUMIAR_ESTRUTURA = [
   {
-    grupo: "Estatutários e Tesouraria",
-    itens: [
-      { nome: "Estatutários", resumo: "Camilly Nobre (presidente), Guilherme Lima (vice-presidente) e Esther Barletta (secretária-geral). O texto da carta sobre os estatutários ainda está sendo escrito." },
-      { nome: "Tesouraria", resumo: "Yasmim Yukie e Kamila Araújo, co-tesoureiras. O texto da carta sobre a tesouraria ainda está sendo escrito." }
-    ]
-  },
-  {
     grupo: "Secretarias",
+    descricao: "Fazem o CAVC funcionar por dentro e por fora.",
     itens: [
       { nome: "Gestão de Pessoas", area: "gestao", resumo: "Cuida para que a gestão seja um bom lugar de trabalhar: integração, acompanhamento dos membros e capacitações." },
       { nome: "Comunicação", area: "comunicacao", resumo: "Nova secretaria, no lugar da de Marketing: cria conteúdo, cobre eventos, cuida da identidade do CAVC e mantém a ouvidoria." },
@@ -758,6 +753,7 @@ window.LUMIAR_ESTRUTURA = [
   },
   {
     grupo: "Áreas",
+    descricao: "Tocam os projetos que chegam aos estudantes.",
     itens: [
       { nome: "Acadêmica", area: "academica", resumo: "Ensino, pesquisa e extensão: fecha as lacunas da graduação e aproxima alunos e docentes." },
       { nome: "APSM", area: "apsm", resumo: "Apoio, Permanência e Saúde Mental: acesso, diversidade, auxílios, CRUSP e cuidado com quem estuda." },

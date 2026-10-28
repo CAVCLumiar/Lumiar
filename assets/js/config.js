@@ -3,11 +3,12 @@
  * Tudo que está vazio ("") fica escondido no site até ser preenchido.
  */
 window.LUMIAR_CONFIG = {
-  // Perfil da chapa no Instagram, ex.: "https://www.instagram.com/chapalumiar/"
-  instagram: "",
+  // Perfil da chapa no Instagram
+  instagram: "https://www.instagram.com/lumiarfeausp/",
+  instagramUsuario: "@lumiarfeausp",
 
-  // Post com o manifesto
-  manifestoPost: "https://www.instagram.com/p/DfDEmIPuCyO/",
+  // Manifesto em PDF (o botão da seção Manifesto abre este arquivo)
+  manifestoPdf: "manifesto/manifesto-lumiar.pdf",
 
   // E-mail que recebe as ideias enviadas pelo formulário do site
   email: "chapa.cavc.lumiar@gmail.com",

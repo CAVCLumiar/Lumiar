@@ -227,33 +227,88 @@
   atualizarEstrelas();
   aplicarFiltro();
 
-  /* ---------- Estrutura ---------- */
-  var grade = $("#estrutura-grade");
-  var painel = $("#estrutura-painel");
-  var itemAberto = null;
-  ESTRUTURA.forEach(function (g) {
-    var caixa = el("div", { classe: "estrutura__itens" });
-    g.itens.forEach(function (item) {
-      var b = el("button", { type: "button", classe: "estrutura__item" + (item.pendente ? " estrutura__item--pendente" : ""), "aria-expanded": "false", "aria-controls": "estrutura-painel", texto: item.nome });
-      b.addEventListener("click", function () {
-        if (itemAberto) itemAberto.setAttribute("aria-expanded", "false");
-        if (itemAberto === b) { itemAberto = null; painel.hidden = true; return; }
-        itemAberto = b;
-        b.setAttribute("aria-expanded", "true");
-        painel.innerHTML = "";
-        painel.appendChild(el("h3", { texto: item.nome }));
-        painel.appendChild(el("p", { texto: item.pendente ? "Esta parte da carta ainda está sendo escrita. Em breve aqui." : item.resumo }));
-        if (item.area) {
-          var ver = el("button", { type: "button", texto: "Ver as propostas →" });
-          ver.addEventListener("click", function () { abrirArea(item.area, true); });
-          painel.appendChild(ver);
-        }
-        painel.hidden = false;
-      });
-      caixa.appendChild(b);
-    });
-    grade.appendChild(el("div", { classe: "estrutura__grupo" }, [el("h3", { texto: g.grupo }), caixa]));
+  /* ---------- Estrutura (organograma) ---------- */
+  var org = $("#org");
+  var estatutarios = (CFG.estatutarios || []).filter(function (m) { return m.nome; });
+
+  // Junta quem divide o mesmo cargo (ex.: as duas co-tesoureiras)
+  var cargos = [];
+  estatutarios.forEach(function (m) {
+    var c = cargos.filter(function (x) { return x.cargo === m.cargo; })[0];
+    if (c) c.nomes.push(m.nome); else cargos.push({ cargo: m.cargo, nomes: [m.nome] });
   });
+  function nomeCurto(n) { var p = n.split(" "); return p.length > 2 ? p[0] + " " + p[1] : n; }
+
+  if (cargos.length) {
+    var diretoria = el("div", { classe: "org__diretoria" });
+    cargos.forEach(function (c) {
+      diretoria.appendChild(el("div", { classe: "org__cargo" }, [
+        el("span", { classe: "org__cargo-nome", texto: c.nomes.length > 1 ? c.cargo + "s" : c.cargo }),
+        el("strong", { texto: c.nomes.map(nomeCurto).join(" e ") })
+      ]));
+    });
+    org.appendChild(el("div", { classe: "org__topo" }, [
+      el("h3", { classe: "org__rotulo", texto: "Diretoria estatutária" }),
+      diretoria
+    ]));
+    org.appendChild(el("div", { classe: "org__tronco", "aria-hidden": "true" }));
+  }
+
+  var ramos = el("div", { classe: "org__ramos" });
+  ESTRUTURA.forEach(function (g) {
+    var cards = el("div", { classe: "org__cards" });
+    g.itens.forEach(function (item) {
+      var n = item.area ? PROPOSTAS.filter(function (p) { return p.area === item.area; }).length : 0;
+      var filhos = [
+        el("strong", { classe: "org__frente-nome", texto: item.nome }),
+        el("p", { texto: item.pendente ? "Texto da carta em construção." : item.resumo })
+      ];
+      var card;
+      if (item.area) {
+        filhos.push(el("span", { classe: "org__frente-link", texto: n + (n === 1 ? " proposta →" : " propostas →") }));
+        card = el("button", { type: "button", classe: "org__frente" }, filhos);
+        card.addEventListener("click", function () { abrirArea(item.area, true); });
+      } else {
+        card = el("div", { classe: "org__frente org__frente--pendente" }, filhos);
+      }
+      cards.appendChild(card);
+    });
+    ramos.appendChild(el("div", { classe: "org__ramo" }, [
+      el("div", { classe: "org__ramo-cabeca" }, [el("h3", { texto: g.grupo }), el("p", { texto: g.descricao || "" })]),
+      cards
+    ]));
+  });
+  org.appendChild(ramos);
+
+  /* ---------- Números do herói ---------- */
+  var cursos = {};
+  (CFG.chapa || []).forEach(function (m) { if (m.curso) cursos[m.curso.split(" ·")[0]] = 1; });
+  [
+    [PROPOSTAS.length, "propostas"],
+    [AREAS.length, "áreas"],
+    [(CFG.chapa || []).length, "estudantes"],
+    [Object.keys(cursos).length, "cursos da FEA"]
+  ].forEach(function (x) {
+    if (!x[0]) return;
+    $("#numeros").appendChild(el("div", { classe: "numeros__item" }, [el("strong", { texto: String(x[0]) }), el("span", { texto: x[1] })]));
+  });
+  if (CFG.instagram) $("#heroi-insta").textContent = "Siga " + (CFG.instagramUsuario || "a Lumiar") + " no Instagram →";
+
+  /* ---------- Menu: destaca a seção visível ---------- */
+  if ("IntersectionObserver" in window) {
+    var linksNav = {};
+    nav.querySelectorAll('a[href^="#"]').forEach(function (a) { linksNav[a.getAttribute("href").slice(1)] = a; });
+    var observador = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        // Seções fora do menu (início, chapa…) apagam o destaque
+        Object.keys(linksNav).forEach(function (k) { linksNav[k].classList.remove("ativo"); });
+        var a = linksNav[e.target.id];
+        if (a) a.classList.add("ativo");
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    document.querySelectorAll("main > section").forEach(function (s) { observador.observe(s); });
+  }
 
   /* ---------- Manifesto ---------- */
   // Parágrafo com trechos em **negrito**
@@ -298,7 +353,6 @@
     ]);
   }
   var gradeChapa = $("#chapa-grade");
-  var estatutarios = (CFG.estatutarios || []).filter(function (m) { return m.nome; });
   if (estatutarios.length) {
     var caixaEst = el("div", { classe: "estatutarios" });
     estatutarios.forEach(function (m) { caixaEst.appendChild(cartaoMembro(m, true)); });
@@ -325,6 +379,7 @@
     var partes = [];
     if (CFG.email) partes.push("e-mail " + CFG.email);
     CONTATOS.forEach(function (c) { partes.push(c.nome + " no WhatsApp " + c.telefone); });
+    if (CFG.instagram) partes.push("ou " + (CFG.instagramUsuario || "nosso perfil") + " no Instagram");
     return partes.join(", ");
   }
   var listaContato = $("#contato-lista");
@@ -341,10 +396,20 @@
       el("span", { texto: c.telefone })
     ]));
   });
+  if (CFG.instagram) {
+    listaContato.appendChild(el("a", { classe: "contato__item", href: CFG.instagram, target: "_blank", rel: "noopener" }, [
+      el("span", { classe: "contato__tipo", texto: "Instagram" }),
+      el("strong", { texto: CFG.instagramUsuario || "Instagram" })
+    ]));
+  }
   if (!listaContato.children.length) $("#contato").hidden = true;
 
   var rodapeContato = $("#rodape-contato");
-  if (CFG.email) rodapeContato.appendChild(el("a", { href: "mailto:" + CFG.email, texto: CFG.email }));
+  if (CFG.instagram) rodapeContato.appendChild(el("a", { href: CFG.instagram, target: "_blank", rel: "noopener", texto: CFG.instagramUsuario || "Instagram" }));
+  if (CFG.email) {
+    if (rodapeContato.childNodes.length) rodapeContato.appendChild(document.createTextNode(" · "));
+    rodapeContato.appendChild(el("a", { href: "mailto:" + CFG.email, texto: CFG.email }));
+  }
   CONTATOS.forEach(function (c) {
     if (rodapeContato.childNodes.length) rodapeContato.appendChild(document.createTextNode(" · "));
     rodapeContato.appendChild(el("a", { href: linkWhats(c), target: "_blank", rel: "noopener", texto: c.nome + " " + c.telefone }));
@@ -475,6 +540,10 @@
       if (contatos.childNodes.length) contatos.appendChild(document.createTextNode(" · "));
       contatos.appendChild(el("a", { href: linkWhats(c), target: "_blank", rel: "noopener", texto: "WhatsApp " + c.nome }));
     });
+    if (CFG.instagram) {
+      if (contatos.childNodes.length) contatos.appendChild(document.createTextNode(" · "));
+      contatos.appendChild(el("a", { href: CFG.instagram, target: "_blank", rel: "noopener", texto: CFG.instagramUsuario || "Instagram" }));
+    }
     if (!contatos.childNodes.length) contatos.appendChild(el("a", { href: "#ideia", texto: "formulário de ideias" }));
     corpo.push(contatos);
     return corpo;

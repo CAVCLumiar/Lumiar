@@ -26,7 +26,7 @@ carta/                  PDF final da carta programa
 2. **Manifesto**: abertura do manifesto e a "Carta aos estudantes" em partes que abrem e fecham.
 3. **O que muda para você**: quatro destaques.
 4. **Propostas**: sanfona por área; cada proposta mostra uma linha e abre o detalhe. Busca, "abrir/fechar todas" e estrela ☆ para marcar (fica salvo no navegador de quem marcou).
-5. **Estrutura**: estatutários, secretarias e áreas; clicar abre a descrição e leva às propostas.
+5. **Estrutura**: organograma com a diretoria estatutária no topo e secretarias e áreas abaixo; cada frente leva às suas propostas.
 6. **A chapa**: cargos estatutários em destaque e quem assina o manifesto (lidos de `config.js`).
 7. **Pergunte à Lumiar**: chat que responde direto com o conteúdo da proposta mais próxima. Não usa IA nem servidor: procura palavras em `conteudo.js`. Sem resposta, indica e-mail e WhatsApp.
 8. **Tem uma ideia?**: formulário que abre o e-mail (ou um Google Forms) com a sugestão.
@@ -35,7 +35,8 @@ carta/                  PDF final da carta programa
 ## Como editar
 
 - **Mudar ou adicionar proposta**: edite `assets/js/conteudo.js`, lista `LUMIAR_PROPOSTAS`. Cada item tem `area`, `titulo`, `texto`, `pagina` (página da carta) e `busca` (palavras extras para o chat achar).
-- **Links da campanha** (Instagram, e-mail, formulários, datas da eleição): `assets/js/config.js`. O que estiver vazio fica escondido.
+- **Links da campanha** (Instagram, e-mail, WhatsApp, formulários, datas da eleição, cargos): `assets/js/config.js`. O que estiver vazio fica escondido.
+- **Manifesto em PDF**: `manifesto/manifesto-lumiar.pdf` (para trocar, substitua o arquivo mantendo o nome).
 - **Carta final**: salve como `carta/carta-programa.pdf` e preencha `cartaUrl: "carta/carta-programa.pdf"`. Confira os números de página das propostas, que hoje seguem o rascunho.
 - **Integrantes**: fotos em `assets/img/chapa/` e a lista em `chapa` no `config.js`.
 
