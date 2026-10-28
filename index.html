@@ -38,6 +38,7 @@
         <a href="#estrutura">Estrutura</a>
         <a href="#pergunte">Pergunte</a>
         <a href="#faq">Dúvidas</a>
+        <a href="#contato">Contato</a>
         <a class="botao botao--pequeno" href="#ideia">Mandar ideia</a>
       </nav>
     </div>
@@ -73,16 +74,22 @@
     <!-- MANIFESTO -->
     <section class="manifesto" id="manifesto">
       <div class="dentro manifesto__grade">
-        <div>
+        <div class="manifesto__lado">
           <p class="sobretitulo">Manifesto</p>
-          <h2>A universidade não acontece só dentro da sala de aula.</h2>
+          <h2 id="manifesto-titulo"></h2>
+          <img src="assets/img/farol-cobre.png" alt="" width="395" height="1040" loading="lazy">
         </div>
         <div class="manifesto__texto">
-          <p>É nos corredores, nos intervalos, nos treinos, nas entidades e nas conversas depois da aula que criamos laços, descobrimos interesses e passamos a nos sentir parte da FEA.</p>
-          <p>Para a Lumiar, garantir a vivência universitária plena é garantir que essa experiência seja de todas as pessoas que estudam aqui, independentemente de classe social, gênero, sexualidade ou etnia. E o Centro Acadêmico tem papel central em abrir essas portas.</p>
-          <blockquote>Queremos, como diz o nome da nossa chapa, trazer mais luz e movimento para o dia a dia da FEA.</blockquote>
-          <a class="link-seta" data-config-href="manifestoPost" href="#" target="_blank" rel="noopener">Ler o manifesto no Instagram</a>
+          <div id="manifesto-abertura"></div>
+          <p class="manifesto__assinatura" id="manifesto-assinatura"></p>
         </div>
+      </div>
+
+      <div class="dentro carta-estudantes">
+        <h3 class="carta-estudantes__titulo" id="carta-titulo"></h3>
+        <p class="carta-estudantes__dica">Abra cada parte para ler.</p>
+        <div class="carta-estudantes__partes" id="carta-partes"></div>
+        <a class="link-seta" data-config-href="manifestoPost" href="#" target="_blank" rel="noopener">Ver o manifesto no Instagram</a>
       </div>
 
       <div class="dentro lema">
@@ -112,20 +119,24 @@
     <section class="secao secao--creme" id="propostas">
       <div class="dentro">
         <p class="sobretitulo">Propostas</p>
-        <h2>Tudo o que a Lumiar quer fazer, em uma linha cada.</h2>
-        <p class="introducao">Um resumo da carta programa, que ainda está sendo fechada. Escolha uma área ou busque um tema. Marque com <span class="estrela-exemplo">☆</span> o que importa para você; suas marcações ficam salvas neste navegador.</p>
+        <h2>O que a Lumiar quer fazer, área por área.</h2>
+        <p class="introducao">Abra uma área para ver as propostas e abra uma proposta para ver como ela funciona. Marque com <span class="estrela-exemplo">☆</span> o que importa para você; suas marcações ficam salvas neste navegador. A carta ainda está sendo fechada.</p>
 
         <div class="filtros">
           <label class="busca">
             <span class="sr">Buscar nas propostas</span>
             <input type="search" id="busca" placeholder="Buscar: aulão, CRUSP, HH, estágio…" autocomplete="off">
           </label>
-          <div class="chips" id="chips" role="tablist" aria-label="Filtrar por área"></div>
+          <div class="filtros__acoes">
+            <button type="button" class="chip" id="abrir-todas">Abrir todas</button>
+            <button type="button" class="chip" id="fechar-todas">Fechar todas</button>
+            <button type="button" class="chip chip--estrela" id="so-estrelas" aria-pressed="false">★ Minhas <span id="n-estrelas">0</span></button>
+          </div>
         </div>
 
         <p class="contagem" id="contagem" aria-live="polite"></p>
-        <div class="propostas" id="lista-propostas"></div>
-        <p class="vazio" id="vazio" hidden>Nada encontrado. Tente outra palavra ou <a href="#ideia">mande sua ideia</a>.</p>
+        <div class="areas" id="lista-propostas"></div>
+        <p class="vazio" id="vazio" hidden></p>
       </div>
     </section>
 
@@ -145,6 +156,8 @@
       <div class="dentro">
         <p class="sobretitulo">Quem faz</p>
         <h2>A chapa Lumiar.</h2>
+        <div id="estatutarios"></div>
+        <p class="chapa__sub" id="chapa-sub"></p>
         <div class="chapa" id="chapa-grade"></div>
       </div>
     </section>
@@ -156,7 +169,7 @@
           <p class="sobretitulo">Pergunte à Lumiar</p>
           <h2>Tem dúvida sobre alguma proposta?</h2>
           <p>Escreva do seu jeito. A gente procura na carta programa e te mostra o que tem sobre o assunto. Se não tiver, vira sugestão.</p>
-          <p class="pergunte__aviso">É uma busca nas propostas, não uma pessoa nem uma IA. Para falar com a chapa, use o formulário abaixo.</p>
+          <p class="pergunte__aviso">As respostas vêm direto da carta programa. Se não achar o que procura, fale com a gente pelo e-mail ou WhatsApp.</p>
         </div>
 
         <div class="chat" role="region" aria-label="Pergunte à Lumiar">
@@ -211,6 +224,11 @@
             <a class="botao" data-config-href="formularioParticipe" href="#" target="_blank" rel="noopener">Quero ajudar</a>
             <a class="botao botao--contorno" data-config-href="instagram" href="#" target="_blank" rel="noopener">Seguir no Instagram</a>
           </div>
+
+          <div class="contato" id="contato">
+            <h3>Fale com a gente</h3>
+            <div class="contato__lista" id="contato-lista"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -220,12 +238,14 @@
     <div class="dentro rodape__dentro">
       <img src="assets/img/lumiar-mostarda.png" alt="Lumiar" width="499" height="118" loading="lazy">
       <p>Chapa Lumiar · Eleições do Centro Acadêmico Visconde de Cairu · FEA-USP</p>
+      <p id="rodape-contato"></p>
       <p class="rodape__lema">Se unir para mudar, mobilizar para conquistar ☆</p>
     </div>
   </footer>
 
   <script src="assets/js/config.js"></script>
   <script src="assets/js/conteudo.js"></script>
+  <script src="assets/js/manifesto.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -11,8 +11,9 @@ Site estático (HTML, CSS e JavaScript puro), sem build: dá para publicar diret
 ```
 index.html              página única com todas as seções
 assets/css/style.css    visual (cores, fontes, layout)
-assets/js/config.js     links e dados da campanha  ← editar aqui
-assets/js/conteudo.js   propostas, áreas, estrutura e FAQ  ← editar aqui
+assets/js/config.js     e-mail, WhatsApp, links, cargos estatutários e integrantes  ← editar aqui
+assets/js/conteudo.js   propostas (resumo + detalhe), áreas, estrutura e FAQ  ← editar aqui
+assets/js/manifesto.js  manifesto e "Carta aos estudantes"  ← editar aqui
 assets/js/main.js       monta as seções, filtros, estrelas, chat e formulário
 assets/img/             logos (versões transparentes), favicons e imagem de compartilhamento
 assets/img/chapa/       fotos dos integrantes
@@ -22,12 +23,12 @@ carta/                  PDF final da carta programa
 ## Seções
 
 1. **Início**: farol com o feixe varrendo e o lema girando, como no selo.
-2. **Manifesto**: texto da vivência universitária e o lema dividido em "Se unir para mudar" / "Mobilizar para conquistar".
+2. **Manifesto**: abertura do manifesto e a "Carta aos estudantes" em partes que abrem e fecham.
 3. **O que muda para você**: quatro destaques.
-4. **Propostas**: resumo da carta em uma linha cada, com busca, filtro por área e estrela ☆ para marcar (fica salvo no navegador de quem marcou).
+4. **Propostas**: sanfona por área; cada proposta mostra uma linha e abre o detalhe. Busca, "abrir/fechar todas" e estrela ☆ para marcar (fica salvo no navegador de quem marcou).
 5. **Estrutura**: estatutários, secretarias e áreas; clicar abre a descrição e leva às propostas.
-6. **A chapa**: integrantes (lidos de `config.js`).
-7. **Pergunte à Lumiar**: chat que busca nas propostas e no FAQ. Não usa IA nem servidor: só procura palavras no conteúdo de `conteudo.js`.
+6. **A chapa**: cargos estatutários em destaque e quem assina o manifesto (lidos de `config.js`).
+7. **Pergunte à Lumiar**: chat que responde direto com o conteúdo da proposta mais próxima. Não usa IA nem servidor: procura palavras em `conteudo.js`. Sem resposta, indica e-mail e WhatsApp.
 8. **Tem uma ideia?**: formulário que abre o e-mail (ou um Google Forms) com a sugestão.
 9. **Dúvidas** e **Participe**.
 
