@@ -34,7 +34,7 @@ carta/                  PDF final da carta programa
 
 ## Como editar
 
-- **Mudar ou adicionar proposta**: edite `assets/js/conteudo.js`, lista `LUMIAR_PROPOSTAS`. Cada item tem `area`, `titulo`, `texto`, `pagina` (página da carta) e `busca` (palavras extras para o chat achar).
+- **Mudar ou adicionar proposta**: edite `assets/js/conteudo.js`, lista `LUMIAR_PROPOSTAS`. Cada item tem `area`, `titulo`, `resumo` (uma linha), `detalhe` (lista de pontos), `pagina` (página da carta) e `busca` (palavras extras para o chat achar).
 - **Links da campanha** (Instagram, e-mail, WhatsApp, formulários, datas da eleição, cargos): `assets/js/config.js`. O que estiver vazio fica escondido.
 - **Manifesto em PDF**: `manifesto/manifesto-lumiar.pdf` (para trocar, substitua o arquivo mantendo o nome).
 - **Carta final**: salve como `carta/carta-programa.pdf` e preencha `cartaUrl: "carta/carta-programa.pdf"`. Confira os números de página das propostas, que hoje seguem o rascunho.
@@ -42,8 +42,8 @@ carta/                  PDF final da carta programa
 
 ## Pendências de conteúdo
 
-- Seções da carta ainda sem texto: Conjuntura, Noções de CAVC, Continuidade, Estatutários, Tesouraria, Finanças, Entidades, Representação Discente.
-- Perfil do Instagram, e-mail/formulário de ideias, formulário de "Quero ajudar", datas e locais da eleição.
+- Seções da carta ainda sem texto: Conjuntura (texto incompleto), Noções de CAVC, Estatutários, Tesouraria, Finanças, Entidades.
+- Formulário de "Quero ajudar", datas e locais da eleição.
 - Conferir a regra de quem vota no regimento eleitoral (a FAQ diz "estudantes de graduação da FEA").
 
 ## Publicar no GitHub Pages
