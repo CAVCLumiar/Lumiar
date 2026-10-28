@@ -36,7 +36,13 @@ window.LUMIAR_CONFIG = {
 
   // Cargos estatutários. Preencha cargo e nome; aparecem em destaque na seção "A chapa".
   // Ex.: { cargo: "Presidência", nome: "Fulana de Tal", curso: "Economia · 2º ano", foto: "assets/img/chapa/fulana.jpg" }
-  estatutarios: [],
+  estatutarios: [
+    { cargo: "Presidente", nome: "Camilly Nobre Santos", curso: "Economia · 2º ano" },
+    { cargo: "Vice-presidente", nome: "Guilherme Lima Santos Junior", curso: "Economia · 2º ano" },
+    { cargo: "Secretária-geral", nome: "Esther Barletta Efraim", curso: "Economia · 2º ano" },
+    { cargo: "Co-tesoureira", nome: "Yasmim Yukie Oaira Siqueira", curso: "Administração · 2º ano" },
+    { cargo: "Co-tesoureira", nome: "Kamila Araújo Cecílio", curso: "Contabilidade · 2º ano" }
+  ],
 
   // Quem assina o manifesto (opcional: cargo e foto)
   chapa: [

@@ -306,8 +306,13 @@
     $("#estatutarios").appendChild(caixaEst);
   }
   if (CFG.chapa && CFG.chapa.length) {
-    $("#chapa-sub").textContent = CFG.chapa.length + " estudantes de Economia, Administração, Contabilidade e Atuária assinam o manifesto.";
-    CFG.chapa.forEach(function (m) { gradeChapa.appendChild(cartaoMembro(m, false)); });
+    // Quem já aparece nos cargos estatutários não se repete na lista
+    var nomesEst = estatutarios.map(function (m) { return m.nome; });
+    var demais = CFG.chapa.filter(function (m) { return nomesEst.indexOf(m.nome) === -1; });
+    $("#chapa-sub").textContent = estatutarios.length
+      ? "Também assinam o manifesto, ao todo " + CFG.chapa.length + " estudantes de Economia, Administração, Contabilidade e Atuária:"
+      : CFG.chapa.length + " estudantes de Economia, Administração, Contabilidade e Atuária assinam o manifesto.";
+    demais.forEach(function (m) { gradeChapa.appendChild(cartaoMembro(m, false)); });
   } else {
     gradeChapa.appendChild(el("div", { classe: "chapa__breve" }, [
       el("img", { src: "assets/img/farol-cobre.png", alt: "" }),

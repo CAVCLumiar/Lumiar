@@ -742,8 +742,8 @@ window.LUMIAR_ESTRUTURA = [
   {
     grupo: "Estatutários e Tesouraria",
     itens: [
-      { nome: "Estatutários", pendente: true },
-      { nome: "Tesouraria", pendente: true }
+      { nome: "Estatutários", resumo: "Camilly Nobre (presidente), Guilherme Lima (vice-presidente) e Esther Barletta (secretária-geral). O texto da carta sobre os estatutários ainda está sendo escrito." },
+      { nome: "Tesouraria", resumo: "Yasmim Yukie e Kamila Araújo, co-tesoureiras. O texto da carta sobre a tesouraria ainda está sendo escrito." }
     ]
   },
   {
