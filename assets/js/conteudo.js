@@ -32,7 +32,7 @@ window.LUMIAR_AREAS = [
   },
   {
     id: "apsm", nome: "Apoio, permanência e saúde mental",
-    intro: "A FEA tem que caber na vida de quem estuda aqui: acesso, diversidade, auxílios, moradia e cuidado com a saúde mental."
+    intro: "A FEA tem que caber na vida de quem estuda aqui: acesso, diversidade, auxílios, moradia e cuidado com a saúde mental. E aqui muita gente se sustenta com a bolsa do estágio, mesmo recebendo PAPFE: estágio não substitui política de permanência, mas colocar mais feanos no mercado alivia a vulnerabilidade financeira de muitos."
   },
   {
     id: "eventos", nome: "Eventos",
@@ -368,6 +368,76 @@ window.LUMIAR_PROPOSTAS = [
     resumo: "Grades, temas pouco abordados e intercâmbio em debate.",
     detalhe: ["Feitas com outras áreas do CAVC, para uma formação mais crítica e plural."],
     busca: "palestra debate"
+  },
+
+  /* ---------------- ESTÁGIOS (distribuídas entre Acadêmica, RD e APSM) ---------------- */
+  {
+    area: "rd", titulo: "Troca de turno mais fácil",
+    resumo: "Facilitar a transferência entre turnos, principalmente para quem recebe PAPFE e vive do estágio.",
+    detalhe: [
+      "Quem depende do estágio para se sustentar precisa conseguir conciliar aula e trabalho.",
+      "Lutar para que a transferência entre integral e noturno seja mais simples, com prioridade para quem recebe o PAPFE."
+    ],
+    busca: "turno transferencia noturno integral papfe estagio trabalha"
+  },
+  {
+    area: "apsm", titulo: "Vagas antes de todo mundo",
+    resumo: "Grupos de vagas maiores e uma IA que garimpa oportunidades para o perfil feano.",
+    detalhe: [
+      "Ampliar os grupos de divulgação de vagas que já existem, com as indicações dos próprios alunos.",
+      "Usar inteligência artificial para coletar automaticamente vagas em plataformas como Gupy e LinkedIn que combinem com o perfil da FEA.",
+      "A ideia é que os feanos sejam os primeiros a saber das vagas assim que forem publicadas."
+    ],
+    busca: "vaga vagas grupo divulgacao ia inteligencia artificial gupy linkedin oportunidade emprego"
+  },
+  {
+    area: "academica", titulo: "Preparação para processos seletivos",
+    resumo: "Monitorias, oficinas e palestras de entrevista, currículo e LinkedIn.",
+    detalhe: [
+      "Ajudar os feanos em entrevistas de emprego, montagem de currículo e estruturação do LinkedIn.",
+      "Outras faculdades já oferecem mentoria individual para isso; nossos alunos precisam estar preparados para competir em alto nível."
+    ],
+    busca: "entrevista curriculo cv linkedin processo seletivo mentoria oficina dinamica"
+  },
+  {
+    area: "rd", titulo: "Seção de Estágios mais rápida",
+    resumo: "Contrato assinado pela faculdade em até uma semana e documentação mais clara.",
+    detalhe: [
+      "O sistema da FEA já é relativamente simples, mas dá para melhorar.",
+      "Propor um prazo máximo de uma semana para a faculdade assinar os contratos de estágio.",
+      "Documentação mais clara para quem está começando um estágio."
+    ],
+    busca: "contrato assinatura secao estagios burocracia documento tce prazo"
+  },
+  {
+    area: "apsm", titulo: "Indique um Feano",
+    resumo: "Um programa para feanos indicarem colegas às vagas das suas empresas.",
+    detalhe: ["Incentivar quem já está no mercado a recomendar colegas da FEA para vagas onde trabalha."],
+    busca: "indicacao indique feano empresa vaga rede networking"
+  },
+  {
+    area: "academica", titulo: "Empresas de todas as áreas na FEA",
+    resumo: "Palestras institucionais com mercado financeiro, setor público, estatais e mais.",
+    detalhe: [
+      "Mostrar aos alunos a pluralidade de oportunidades, não só o mercado financeiro.",
+      "Feitas com outras entidades ou pelo próprio CAVC, para aproximar a FEA desses empregadores."
+    ],
+    busca: "palestra empresa mercado financeiro setor publico estatal carreira"
+  },
+  {
+    area: "academica", titulo: "Vagas exclusivas com SempreFEA e AmeFEA",
+    resumo: "Usar a rede de organizações parceiras para atrair empresas e vagas só para feanos.",
+    detalhe: ["Aproveitar a estrutura de parceiros como a SempreFEA e a AmeFEA para captar vagas exclusivas para os alunos."],
+    busca: "semprefea amefea exclusiva parceria empresa vaga ex-alunos"
+  },
+  {
+    area: "academica", titulo: "Certificações mais acessíveis",
+    resumo: "Apoio para tirar CPA, CEA, ANCORD e outras formações complementares.",
+    detalhe: [
+      "Programas próprios ou parcerias com instituições de ensino para facilitar o acesso a esses conteúdos.",
+      "Certificações que o mercado cobra e que a grade não oferece."
+    ],
+    busca: "certificacao cpa cea ancord cfp curso formacao complementar"
   },
 
   /* ---------------- REPRESENTAÇÃO DISCENTE ---------------- */

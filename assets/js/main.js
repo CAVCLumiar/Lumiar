@@ -490,6 +490,8 @@
     psico: "saude mental psicologo", terap: "saude mental terapia", ansie: "saude mental", depre: "saude mental",
     burno: "saude mental", exame: "prova aulao", provas: "prova aulao",
     empreg: "estagio trabalha", traba: "trabalha estagio", estag: "estagio",
+    vaga: "vaga estagio", curri: "curriculo", cv: "curriculo", linke: "linkedin", entrev: "entrevista", turno: "turno",
+    notur: "noturno turno", certi: "certificacao", cpa: "certificacao cpa", cea: "certificacao cea", gupy: "vaga gupy",
     comid: "vivencia lanchonete", lanch: "vivencia lanchonete", cafe: "vivencia", canti: "vivencia",
     morad: "crusp moradia", morar: "crusp moradia", moro: "crusp moradia", mora: "crusp moradia", repub: "crusp moradia",
     gay: "lgbt", queer: "lgbt queer", lgbt: "lgbt", trans: "trans lgbt",
