@@ -812,6 +812,7 @@ window.LUMIAR_PROPOSTAS = [
 
 /* "O que a continuidade já fez": aparece antes das propostas. */
 window.LUMIAR_CONQUISTAS = [
+  { marca: "Cotas", titulo: "Cotas na USP", texto: "A adoção das cotas na USP foi fruto da mobilização da continuidade da qual fazemos parte, com o movimento estudantil nas ruas." },
   { marca: "2018", titulo: "Atuária no nome da FEA", texto: "Ciências Atuariais entrou no nome oficial da faculdade graças à atuação estudantil." },
   { marca: "2021", titulo: "Cotas por renda", texto: "Pela primeira vez, a FEA aprovou cotas por renda, com articulação do CAVC nos colegiados." },
   { marca: "Economia", titulo: "Fim dos créditos fantasma", texto: "A representação discente apontou créditos não contabilizados na grade que poderiam travar o diploma de muita gente." },
@@ -868,7 +869,7 @@ window.LUMIAR_FAQ = [
   },
   {
     pergunta: "O que o CAVC já conquistou?",
-    resposta: "Pela representação discente, a FEA aprovou cotas por renda em 2021, incluiu Ciências Atuariais no nome oficial em 2018 e corrigiu os \"créditos fantasma\" da grade de Economia. A continuidade também recriou a FENECO, trouxe o ENECO de 2028 para a FEA, criou o Festival Paul Singer e o Nivelamento Matemático, que teve mais de 100 inscritos.",
+    resposta: "A adoção das cotas na USP foi fruto da mobilização da nossa continuidade. Pela representação discente, a FEA aprovou cotas por renda em 2021, incluiu Ciências Atuariais no nome oficial em 2018 e corrigiu os \"créditos fantasma\" da grade de Economia. A continuidade também recriou a FENECO, trouxe o ENECO de 2028 para a FEA, criou o Festival Paul Singer e o Nivelamento Matemático, que teve mais de 100 inscritos.",
     busca: "conquista conquistou historia cotas renda atuaria creditos fantasma feito fizeram realizacoes"
   },
   {
