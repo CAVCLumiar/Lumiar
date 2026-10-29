@@ -801,3 +801,8 @@ button.org__frente:hover { border-color: var(--marrom); transform: translateY(-2
 }
 .manifesto__mais::after { content: "↓"; transition: transform 0.2s ease; }
 .manifesto__mais[aria-expanded="true"]::after { transform: rotate(180deg); }
+
+/* Grupo da campanha em destaque nos contatos */
+.contato__item--grupo { background: var(--mostarda); border-color: var(--mostarda); color: var(--marrom-escuro); }
+.contato__item--grupo .contato__tipo { color: var(--marrom); }
+.contato__item--grupo:hover { background: var(--creme); border-color: var(--creme); }

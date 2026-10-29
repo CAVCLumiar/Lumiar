@@ -425,10 +425,18 @@
     var partes = [];
     if (CFG.email) partes.push("e-mail " + CFG.email);
     CONTATOS.forEach(function (c) { partes.push(c.nome + " no WhatsApp " + c.telefone); });
-    if (CFG.instagram) partes.push("ou " + (CFG.instagramUsuario || "nosso perfil") + " no Instagram");
+    if (CFG.instagram) partes.push((CFG.instagramUsuario || "nosso perfil") + " no Instagram");
+    if (CFG.grupoWhatsapp) partes.push("ou entre no grupo " + CFG.grupoWhatsapp.nome + " no WhatsApp");
     return partes.join(", ");
   }
   var listaContato = $("#contato-lista");
+  if (CFG.grupoWhatsapp) {
+    listaContato.appendChild(el("a", { classe: "contato__item contato__item--grupo", href: CFG.grupoWhatsapp.url, target: "_blank", rel: "noopener" }, [
+      el("span", { classe: "contato__tipo", texto: "Grupo no WhatsApp" }),
+      el("strong", { texto: CFG.grupoWhatsapp.nome }),
+      el("span", { texto: "Entre e acompanhe a campanha" })
+    ]));
+  }
   if (CFG.email) {
     listaContato.appendChild(el("a", { classe: "contato__item", href: "mailto:" + CFG.email }, [
       el("span", { classe: "contato__tipo", texto: "E-mail" }),
@@ -460,6 +468,10 @@
     if (rodapeContato.childNodes.length) rodapeContato.appendChild(document.createTextNode(" · "));
     rodapeContato.appendChild(el("a", { href: linkWhats(c), target: "_blank", rel: "noopener", texto: c.nome + " " + c.telefone }));
   });
+  if (CFG.grupoWhatsapp) {
+    rodapeContato.appendChild(document.createTextNode(" · "));
+    rodapeContato.appendChild(el("a", { href: CFG.grupoWhatsapp.url, target: "_blank", rel: "noopener", texto: CFG.grupoWhatsapp.nome }));
+  }
 
   /* ---------- FAQ ---------- */
   FAQ.forEach(function (f) {
@@ -631,6 +643,7 @@
     if (CFG.email) add(el("a", { href: "mailto:" + CFG.email, texto: CFG.email }));
     CONTATOS.forEach(function (c) { add(el("a", { href: linkWhats(c), target: "_blank", rel: "noopener", texto: "WhatsApp " + c.nome })); });
     if (CFG.instagram) add(el("a", { href: CFG.instagram, target: "_blank", rel: "noopener", texto: CFG.instagramUsuario || "Instagram" }));
+    if (CFG.grupoWhatsapp) add(el("a", { href: CFG.grupoWhatsapp.url, target: "_blank", rel: "noopener", texto: "Grupo " + CFG.grupoWhatsapp.nome }));
     if (!p.childNodes.length) add(el("a", { href: "#ideia", texto: "formulário de ideias" }));
     return p;
   }
@@ -655,7 +668,11 @@
     },
     // Instagram, WhatsApp, e-mail
     function (q, todas) {
-      if (!tem(todas, ["insta", "whats", "zap", "email", "e-mail", "telefo", "contat", "numero", "celular"])) return null;
+      if (!tem(todas, ["insta", "whats", "zap", "email", "e-mail", "telefo", "contat", "numero", "celular", "exerc", "grupo"])) return null;
+      if (tem(todas, ["exerc", "grupo"]) && CFG.grupoWhatsapp) {
+        return [el("p", {}, ["O ", el("strong", { texto: CFG.grupoWhatsapp.nome }), " é o grupo aberto da campanha no WhatsApp. Entra lá para acompanhar tudo e ajudar:"]),
+          linha([el("a", { href: CFG.grupoWhatsapp.url, target: "_blank", rel: "noopener", texto: "Entrar no " + CFG.grupoWhatsapp.nome + " →" })])];
+      }
       var t = "Fala com a gente por aqui:";
       if (tem(todas, ["insta"]) && CFG.instagram) t = "Nosso Instagram é " + (CFG.instagramUsuario || CFG.instagram) + ". E também dá para falar com a gente por:";
       return [el("p", { texto: t }), blocoContatos()];

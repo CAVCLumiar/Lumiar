@@ -19,11 +19,14 @@ window.LUMIAR_CONFIG = {
     { nome: "Guilherme Lima", telefone: "(11) 94885-3170", whatsapp: "5511948853170" }
   ],
 
+  // Grupo aberto de WhatsApp da campanha (aparece nos contatos, no "Quero ajudar" e na Lumis)
+  grupoWhatsapp: { nome: "Exército do Lumiar", url: "https://chat.whatsapp.com/DZd0Jxqclm2K0z62JG6Nxj" },
+
   // Alternativa ao e-mail: link de um Google Forms (se preenchido, o botão abre o formulário)
   formularioIdeias: "",
 
   // Formulário para quem quer ajudar na campanha / entrar na gestão
-  formularioParticipe: "",
+  formularioParticipe: "https://chat.whatsapp.com/DZd0Jxqclm2K0z62JG6Nxj",
 
   // Carta programa em PDF (versão comprimida para a web). Os botões "ler na carta" usam este arquivo.
   cartaUrl: "carta/carta-programa-lumiar-2027.pdf",
