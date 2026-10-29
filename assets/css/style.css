@@ -163,7 +163,7 @@ p { margin: 0 0 1em; }
 .heroi__dentro {
   width: min(var(--largura), 100% - 32px); margin-inline: auto;
   display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 40px;
-  padding: clamp(40px, 7vw, 96px) 0 clamp(28px, 4vw, 48px);
+  padding: clamp(36px, 5vw, 72px) 0 clamp(24px, 3vw, 40px);
   position: relative; z-index: 1;
 }
 .heroi .sobretitulo { color: var(--mostarda); }
@@ -248,7 +248,7 @@ p { margin: 0 0 1em; }
 }
 
 /* ---------- Manifesto ---------- */
-.manifesto { background: var(--mostarda); color: var(--marrom-escuro); padding: clamp(56px, 7vw, 96px) 0; }
+.manifesto { background: var(--mostarda); color: var(--marrom-escuro); padding: clamp(36px, 4vw, 52px) 0; }
 .manifesto .sobretitulo { color: var(--marrom); }
 .manifesto__grade { display: grid; grid-template-columns: 1fr 1.2fr; gap: clamp(24px, 5vw, 72px); }
 .manifesto__texto { font-size: 1.12rem; line-height: 1.7; max-width: 64ch; }
@@ -314,7 +314,7 @@ p { margin: 0 0 1em; }
 }
 
 /* ---------- Seções genéricas ---------- */
-.secao { padding: clamp(56px, 7vw, 96px) 0; }
+.secao { padding: clamp(36px, 4vw, 52px) 0; }
 .secao--creme { background: var(--creme); }
 .secao--mostarda { background: var(--mostarda); }
 .secao--mostarda .sobretitulo { color: var(--marrom); }
@@ -325,7 +325,7 @@ p { margin: 0 0 1em; }
 /* ---------- Destaques ---------- */
 .destaques {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px;
-  margin-top: 36px;
+  margin-top: 28px;
 }
 .destaque {
   background: var(--creme); border-radius: var(--raio); padding: 28px 24px;
@@ -453,7 +453,7 @@ p { margin: 0 0 1em; }
 
 /* ---------- Estrutura ---------- */
 /* Organograma: diretoria no topo, secretarias e áreas como dois ramos */
-.org { margin-top: 44px; --fio: 2px solid rgba(145, 54, 1, 0.35); }
+.org { margin-top: 32px; --fio: 2px solid rgba(145, 54, 1, 0.35); }
 .org__topo {
   max-width: 920px; margin-inline: auto; text-align: center;
   background: var(--marrom); color: var(--creme);
@@ -476,7 +476,7 @@ p { margin: 0 0 1em; }
 .org__cargo strong { font-family: var(--fonte-titulo); font-weight: 700; font-size: 1.05rem; line-height: 1.25; }
 
 /* Conjuntura */
-.conjuntura { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(20px, 3vw, 36px); margin-top: 36px; align-items: start; }
+.conjuntura { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(20px, 3vw, 36px); margin-top: 28px; align-items: start; }
 .conjuntura__partes { display: flex; flex-direction: column; gap: 8px; }
 .conjuntura__desafios {
   background: var(--marrom); color: var(--creme); border-radius: 24px; padding: 26px 26px 24px;
@@ -679,7 +679,7 @@ button.org__frente:hover { border-color: var(--marrom); transform: translateY(-2
 .faq details p { color: var(--tinta-suave); padding-right: 40px; }
 
 /* ---------- Participe / rodapé ---------- */
-.participe { background: var(--marrom); color: var(--creme); padding: clamp(56px, 7vw, 96px) 0; overflow: hidden; }
+.participe { background: var(--marrom); color: var(--creme); padding: clamp(36px, 4vw, 52px) 0; overflow: hidden; }
 .participe__grade { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(28px, 6vw, 80px); align-items: center; }
 .participe img { width: min(420px, 100%); }
 .participe h2 { color: var(--mostarda); }
