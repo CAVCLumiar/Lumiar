@@ -42,7 +42,7 @@ carta/                  PDF final da carta programa
 
 ## Pendências de conteúdo
 
-- Seções da carta ainda sem texto: Conjuntura (texto incompleto), Noções de CAVC, Estatutários, Tesouraria, Finanças.
+- Seções da carta ainda sem texto: Conjuntura (texto incompleto), Noções de CAVC, Estatutários, Tesouraria. Finanças tem propostas montadas a partir dos outros textos da carta (revisar com a chapa).
 - Formulário de "Quero ajudar", datas e locais da eleição.
 - Conferir a regra de quem vota no regimento eleitoral (a FAQ diz "estudantes de graduação da FEA").
 

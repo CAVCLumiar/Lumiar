@@ -31,6 +31,10 @@ window.LUMIAR_AREAS = [
     intro: "As mais de vinte entidades independentes da FEA levam a formação para além da sala de aula, mas quase sempre sem apoio da administração. Já houve avanço: o registro de entidades, antes limitado a poucas semanas, agora pode ser feito o ano todo, uma conquista da greve. Ainda há muito a construir."
   },
   {
+    id: "financas", nome: "Finanças",
+    intro: "O dinheiro do CAVC é dos estudantes. A Secretaria de Finanças trabalha junto com a tesouraria para que cada real vire projeto, permanência e uma Vivência funcionando, com contas abertas para todo mundo ver."
+  },
+  {
     id: "apsm", nome: "Apoio, permanência e saúde mental",
     intro: "A FEA tem que caber na vida de quem estuda aqui: acesso, diversidade, auxílios, moradia e cuidado com a saúde mental. E aqui muita gente se sustenta com a bolsa do estágio, mesmo recebendo PAPFE: estágio não substitui política de permanência, mas colocar mais feanos no mercado alivia a vulnerabilidade financeira de muitos."
   },
@@ -553,6 +557,54 @@ window.LUMIAR_PROPOSTAS = [
     busca: "espaco sala reserva plano diretor autonomia entidade"
   },
 
+  /* ---------------- FINANÇAS ---------------- */
+  {
+    area: "financas", titulo: "Contas abertas",
+    resumo: "Quanto entra e quanto sai do CAVC, divulgado para os estudantes.",
+    detalhe: [
+      "Publicar com frequência as receitas e os gastos: Vivência, eventos, projetos e parcerias.",
+      "É o mesmo princípio de transparência que a Lumiar defende nos colegiados: o estudante tem direito de saber o que acontece."
+    ],
+    busca: "contas transparencia prestacao balanco receita gasto dinheiro financas caixa"
+  },
+  {
+    area: "financas", titulo: "Orçamento planejado com as áreas",
+    resumo: "Cada área sabe no começo do ano com quanto pode contar.",
+    detalhe: [
+      "Montar o orçamento do ano com as secretarias e áreas, com prioridade para permanência e projetos que chegam aos estudantes.",
+      "Trabalho conjunto da Secretaria de Finanças com as co-tesoureiras."
+    ],
+    busca: "orcamento planejamento verba area secretaria tesouraria financas"
+  },
+  {
+    area: "financas", titulo: "Vivência bem administrada",
+    resumo: "Administrar bem a lanchonete do CAVC para ela seguir acessível.",
+    detalhe: [
+      "A Vivência é gerida pelo CAVC e faz parte do patrimônio estudantil.",
+      "Cuidar das contas, da manutenção e dos preços para que ela continue acessível aos estudantes e sustentável para a entidade."
+    ],
+    busca: "vivencia lanchonete preco contas financas patrimonio"
+  },
+  {
+    area: "financas", titulo: "Festa que financia permanência",
+    resumo: "O que os eventos arrecadam volta em projetos e em acesso.",
+    detalhe: [
+      "Os eventos ajudam a sustentar o CAVC e a garantir os lotes sociais e trans e a gratuidade para quem mora no CRUSP.",
+      "A FEA Junina também ajuda entidades e times a arrecadar.",
+      "No HH beneficente, parte do lucro vai para uma casa de acolhimento LGBTQIAPN+."
+    ],
+    busca: "festa evento lucro arrecadacao lote social financas dinheiro contas gastam gasto"
+  },
+  {
+    area: "financas", titulo: "Verba de editais e parceiros",
+    resumo: "Buscar recursos fora do caixa do CAVC para tirar projetos do papel.",
+    detalhe: [
+      "Editais do SempreFEA, como o pedido de verba para os absorventes nos banheiros.",
+      "Parcerias com institutos e agências da USP (CAVCEBO), com ONGs (Apoio Psicossocial) e com organizações como SempreFEA e AmeFEA."
+    ],
+    busca: "edital parceria semprefea amefea verba patrocinio recurso financas"
+  },
+
   /* ---------------- APSM ---------------- */
   {
     area: "apsm", pagina: 12, titulo: "Prédios acessíveis",
@@ -903,7 +955,7 @@ window.LUMIAR_ESTRUTURA = [
     itens: [
       { nome: "Gestão de Pessoas", area: "gestao", resumo: "Cuida para que a gestão seja um bom lugar de trabalhar: integração, acompanhamento dos membros e capacitações." },
       { nome: "Comunicação", area: "comunicacao", resumo: "Nova secretaria, no lugar da de Marketing: cria conteúdo, cobre eventos, cuida da identidade do CAVC e mantém a ouvidoria." },
-      { nome: "Finanças", pendente: true },
+      { nome: "Finanças", area: "financas", resumo: "Cuida do dinheiro do CAVC com a tesouraria: contas abertas, orçamento planejado com as áreas e verba de editais e parceiros." },
       { nome: "Entidades", area: "entidades", resumo: "Une as mais de vinte entidades da FEA: Conselho de Entidades, créditos AEX e mais autonomia e espaço." },
       { nome: "Representação Discente", area: "rd", resumo: "Leva a voz dos estudantes aos colegiados da FEA, com consulta aos alunos e transparência sobre o que se decide." }
     ]

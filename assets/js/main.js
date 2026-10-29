@@ -506,7 +506,8 @@
     telef: "contato whatsapp", conta: "contato", falar: "contato",
     conqu: "conquista", fizer: "conquista feito", feito: "conquista feito",
     entid: "entidade", grade: "grade curricular", curri: "grade curricular",
-    cota: "cotas", cotas: "cotas"
+    cota: "cotas", cotas: "cotas",
+    finan: "financas contas", orcam: "orcamento", transp: "transparencia contas", balan: "contas balanco", gasto: "contas gasto", patro: "parceria patrocinio"
   };
 
   // Palavras que puxam cada área (para "o que vocês propõem para festas?")
@@ -516,6 +517,7 @@
     academica: ["acade", "aula", "ensin", "pesqu", "nivel"],
     rd: ["repre", "coleg", "rd", "rds"],
     entidades: ["entid"],
+    financas: ["finan", "orcam", "verba", "contas", "caixa", "transpar"],
     apsm: ["perma", "saude", "apsm", "auxil", "diver", "crusp"],
     eventos: ["event", "festa", "hh", "role"],
     mobilizacao: ["mobil", "polit", "movim"],
@@ -621,6 +623,14 @@
       var t = "Fala com a gente por aqui:";
       if (tem(todas, ["insta"]) && CFG.instagram) t = "Nosso Instagram é " + (CFG.instagramUsuario || CFG.instagram) + ". E também dá para falar com a gente por:";
       return [el("p", { texto: t }), blocoContatos()];
+    },
+    // Dinheiro do próprio CAVC (e não auxílio para o estudante)
+    function (q, todas) {
+      if (!(tem(todas, ["dinhe", "grana", "verba", "caixa", "contas", "orcam", "finan", "gasto", "receit"]) &&
+            tem(todas, ["cavc", "centro", "gestao", "voces", "vcs", "lumiar", "onde", "mostr", "divulg", "transpar"]))) return null;
+      if (tem(todas, ["auxil", "bolsa", "papfe"])) return null;
+      var base = palavras(q).filter(function (w) { return !/^(dinhe|grana|verba|caixa)/.test(w); });
+      return buscarConteudo(q, base.concat(["contas"]));
     },
     // Quem trabalha pode fazer parte?
     function (q, todas) {
@@ -750,7 +760,7 @@
     if (props.length) {
       var p = props[0].p;
       var afirmativa = /^(vai|vao|tem|tera|terao|havera|existe|rola|vai ter|voces vao)/.test(normalizar(q).trim());
-      out.push(el("p", {}, [afirmativa ? "Tem sim! " : "", el("strong", { texto: p.titulo + ". " }), p.resumo]));
+      out.push(el("p", {}, [afirmativa ? "Sim! " : "", el("strong", { texto: p.titulo + ". " }), p.resumo]));
       if (p.detalhe && p.detalhe.length) {
         var ul = el("ul");
         p.detalhe.forEach(function (d) { ul.appendChild(el("li", { texto: d })); });
