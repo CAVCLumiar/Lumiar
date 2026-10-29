@@ -353,7 +353,17 @@
   var MAN = window.LUMIAR_MANIFESTO;
   if (MAN) {
     $("#manifesto-titulo").textContent = MAN.titulo;
-    MAN.abertura.forEach(function (t) { $("#manifesto-abertura").appendChild(paragrafo(t)); });
+    // Mostra o começo e guarda o resto atrás do "Continuar lendo"
+    var VISIVEIS = 4;
+    MAN.abertura.forEach(function (t, i) {
+      $(i < VISIVEIS ? "#manifesto-abertura" : "#manifesto-mais").appendChild(paragrafo(t));
+    });
+    var botaoMais = $("#manifesto-mais-botao");
+    if (MAN.abertura.length <= VISIVEIS) botaoMais.hidden = true;
+    botaoMais.addEventListener("click", function () {
+      var aberto = alternar(botaoMais, $("#manifesto-mais"));
+      botaoMais.textContent = aberto ? "Mostrar menos" : "Continuar lendo";
+    });
     $("#manifesto-assinatura").textContent = MAN.assinatura;
     $("#carta-titulo").textContent = MAN.cartaTitulo;
     MAN.carta.forEach(function (parte, i) {
@@ -881,6 +891,32 @@
     b.addEventListener("click", function () { perguntar(s); });
     $("#chat-sugestoes").appendChild(b);
   });
+
+  /* ---------- Voltar ao topo ---------- */
+  var voltar = $(".topo-voltar");
+  window.addEventListener("scroll", function () { voltar.hidden = window.scrollY < 900; }, { passive: true });
+
+  /* ---------- Cartões aparecem ao rolar ---------- */
+  var reduzir = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if ("IntersectionObserver" in window && !reduzir) {
+    var revelaveis = document.querySelectorAll(".destaque, .conquista, .area, .org__topo, .org__ramo, .membro, .lema__parte, .conjuntura__desafios, .chat, .contato__item");
+    var respondeu = false;
+    var revelar = new IntersectionObserver(function (entradas) {
+      respondeu = true;
+      entradas.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("visivel"); revelar.unobserve(e.target); }
+      });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    revelaveis.forEach(function (n, i) {
+      n.classList.add("revelar");
+      n.style.transitionDelay = (i % 4) * 60 + "ms";
+      revelar.observe(n);
+    });
+    // Garantia: se o navegador não avisar nada (aba em segundo plano, por exemplo), mostra tudo
+    setTimeout(function () {
+      if (!respondeu) revelaveis.forEach(function (n) { n.classList.add("visivel"); });
+    }, 2500);
+  }
 
   $("#chat-form").addEventListener("submit", function (ev) {
     ev.preventDefault();

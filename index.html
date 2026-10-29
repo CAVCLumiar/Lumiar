@@ -89,16 +89,11 @@
         </div>
         <div class="manifesto__texto">
           <div id="manifesto-abertura"></div>
+          <div id="manifesto-mais" hidden></div>
+          <button type="button" class="manifesto__mais" id="manifesto-mais-botao" aria-expanded="false" aria-controls="manifesto-mais">Continuar lendo</button>
           <p class="manifesto__assinatura" id="manifesto-assinatura"></p>
           <a class="link-seta" data-config-href="manifestoPdf" href="#" target="_blank" rel="noopener">Ler o manifesto completo em PDF</a>
         </div>
-      </div>
-
-      <div class="dentro carta-estudantes">
-        <h3 class="carta-estudantes__titulo" id="carta-titulo"></h3>
-        <p class="carta-estudantes__dica">Abra cada parte para ler.</p>
-        <div class="carta-estudantes__partes" id="carta-partes"></div>
-        <a class="botao" data-config-href="manifestoPdf" href="#" target="_blank" rel="noopener">Abrir o manifesto em PDF</a>
       </div>
 
       <div class="dentro lema">
@@ -113,6 +108,13 @@
           <p>Permanência, acesso e representação se conquistam com o CAVC presente na FEA, na USP e no Movimento Estudantil.</p>
         </div>
       </div>
+      <div class="dentro carta-estudantes">
+        <h3 class="carta-estudantes__titulo" id="carta-titulo"></h3>
+        <p class="carta-estudantes__dica">Abra cada parte para ler.</p>
+        <div class="carta-estudantes__partes" id="carta-partes"></div>
+        <a class="botao" data-config-href="manifestoPdf" href="#" target="_blank" rel="noopener">Abrir o manifesto em PDF</a>
+      </div>
+
     </section>
 
     <!-- CONQUISTAS -->
@@ -275,10 +277,23 @@
     <div class="dentro rodape__dentro">
       <img src="assets/img/lumiar-mostarda.png" alt="Lumiar" width="499" height="118" loading="lazy">
       <p>Chapa Lumiar · Eleições do Centro Acadêmico Visconde de Cairu · FEA-USP</p>
+      <nav class="rodape__links" aria-label="Atalhos">
+        <a href="#manifesto">Manifesto</a>
+        <a href="#conjuntura">Conjuntura</a>
+        <a href="#propostas">Propostas</a>
+        <a href="#chapa">A chapa</a>
+        <a href="#pergunte">Lumis</a>
+        <a data-config-href="cartaUrl" href="#" target="_blank" rel="noopener">Carta programa (PDF)</a>
+        <a data-config-href="manifestoPdf" href="#" target="_blank" rel="noopener">Manifesto (PDF)</a>
+      </nav>
       <p id="rodape-contato"></p>
       <p class="rodape__lema">Se unir para mudar, mobilizar para conquistar ☆</p>
     </div>
   </footer>
+
+  <a class="topo-voltar" href="#inicio" aria-label="Voltar ao início" hidden>
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </a>
 
   <script src="assets/js/config.js"></script>
   <script src="assets/js/conteudo.js"></script>
