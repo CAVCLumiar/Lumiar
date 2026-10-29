@@ -369,7 +369,17 @@
   var MAN = window.LUMIAR_MANIFESTO;
   if (MAN) {
     $("#manifesto-titulo").textContent = MAN.titulo;
-    MAN.abertura.forEach(function (t) { $("#manifesto-abertura").appendChild(paragrafo(t)); });
+    // Mostra o começo e guarda o resto atrás do "Continuar lendo"
+    var VISIVEIS = 4;
+    MAN.abertura.forEach(function (t, i) {
+      $(i < VISIVEIS ? "#manifesto-abertura" : "#manifesto-mais").appendChild(paragrafo(t));
+    });
+    var botaoMais = $("#manifesto-mais-botao");
+    if (MAN.abertura.length <= VISIVEIS) botaoMais.hidden = true;
+    botaoMais.addEventListener("click", function () {
+      var aberto = alternar(botaoMais, $("#manifesto-mais"));
+      botaoMais.textContent = aberto ? "Mostrar menos" : "Continuar lendo";
+    });
     $("#manifesto-assinatura").textContent = MAN.assinatura;
   }
 

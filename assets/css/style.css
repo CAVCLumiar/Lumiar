@@ -769,3 +769,13 @@ button.org__frente:hover { border-color: var(--marrom); transform: translateY(-2
   .carta-sec { grid-template-columns: 1fr; }
   .carta-sec__capa { position: static; width: min(240px, 70%); margin-inline: auto; }
 }
+
+/* Manifesto: continuar lendo */
+#manifesto-mais { animation: aparecer 0.35s ease; }
+.manifesto__mais {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 4px;
+  background: none; border: 0; padding: 0; cursor: pointer;
+  font: 600 1rem var(--fonte-texto); color: var(--marrom); border-bottom: 2px solid var(--marrom);
+}
+.manifesto__mais::after { content: "↓"; transition: transform 0.2s ease; }
+.manifesto__mais[aria-expanded="true"]::after { transform: rotate(180deg); }

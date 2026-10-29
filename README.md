@@ -67,3 +67,7 @@ python -m http.server 8000
 ```
 
 e abra `http://localhost:8000`.
+
+## Depois de editar CSS ou JS
+
+Em `index.html`, troque o número `?v=...` nos links de `style.css` e dos `.js` (por exemplo, pela data e hora). Assim o navegador de quem já visitou o site baixa a versão nova em vez de usar a guardada.
