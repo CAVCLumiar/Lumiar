@@ -38,11 +38,14 @@ window.LUMIAR_CONFIG = {
   // Cargos estatutários. Preencha cargo e nome; aparecem em destaque na seção "A chapa".
   // Ex.: { cargo: "Presidência", nome: "Fulana de Tal", curso: "Economia · 2º ano", foto: "assets/img/chapa/fulana.jpg" }
   estatutarios: [
-    { cargo: "Presidente", nome: "Camilly Nobre Santos", curso: "Economia · 2º ano" },
-    { cargo: "Vice-presidente", nome: "Guilherme Lima Santos Junior", curso: "Economia · 2º ano" },
-    { cargo: "Secretária-geral", nome: "Esther Barletta Efraim", curso: "Economia · 2º ano" },
-    { cargo: "Co-tesoureira", nome: "Yasmim Yukie Oaira Siqueira", curso: "Administração · 2º ano" },
-    { cargo: "Co-tesoureira", nome: "Kamila Araújo Cecílio", curso: "Contabilidade · 2º ano" }
+    // apelidos: como as pessoas chamam (a Lumis reconhece); nota: aparece quando perguntam sobre a pessoa
+    { cargo: "Presidente", nome: "Camilly Nobre Santos", curso: "Economia · 2º ano", apelidos: ["camy", "cami", "camilly"],
+      nota: "Criou, com a Esther Barletta, o Nivelamento Matemático, que teve mais de 100 inscritos." },
+    { cargo: "Vice-presidente", nome: "Guilherme Lima Santos Junior", curso: "Economia · 2º ano", apelidos: ["lima", "guilherme", "gui"] },
+    { cargo: "Secretária-geral", nome: "Esther Barletta Efraim", curso: "Economia · 2º ano", apelidos: ["esther"],
+      nota: "Criou, com a Camilly Nobre, o Nivelamento Matemático, que teve mais de 100 inscritos." },
+    { cargo: "Co-tesoureira", nome: "Yasmim Yukie Oaira Siqueira", curso: "Administração · 2º ano", apelidos: ["yukie", "yasmim"] },
+    { cargo: "Co-tesoureira", nome: "Kamila Araújo Cecílio", curso: "Contabilidade · 2º ano", apelidos: ["kamis", "kamila"] }
   ],
 
   // Quem assina o manifesto (opcional: cargo e foto)

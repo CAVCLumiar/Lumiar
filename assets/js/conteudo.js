@@ -27,6 +27,10 @@ window.LUMIAR_AREAS = [
     intro: "Nos colegiados se decide grade, contratação de professores, orçamento e provas de ingresso. A RD leva a voz dos estudantes para lá. Foi assim que a FEA aprovou cotas por renda em 2021, incluiu Atuária no nome em 2018 e corrigiu os \"créditos fantasma\" da grade de Economia."
   },
   {
+    id: "entidades", nome: "Entidades",
+    intro: "As mais de vinte entidades independentes da FEA levam a formação para além da sala de aula, mas quase sempre sem apoio da administração. Já houve avanço: o registro de entidades, antes limitado a poucas semanas, agora pode ser feito o ano todo, uma conquista da greve. Ainda há muito a construir."
+  },
+  {
     id: "apsm", nome: "Apoio, permanência e saúde mental",
     intro: "A FEA tem que caber na vida de quem estuda aqui: acesso, diversidade, auxílios, moradia e cuidado com a saúde mental."
   },
@@ -61,7 +65,7 @@ window.LUMIAR_DESTAQUES = [
   },
   {
     titulo: "Estudar com apoio",
-    texto: "Nivelamento antes de Cálculo I e Estatística, aulões pedidos pela turma, banco de provas antigas e cursos gratuitos de Excel e Power BI.",
+    texto: "O Nivelamento Matemático, que já teve mais de 100 inscritos, continua. E mais: aulões pedidos pela turma, banco de provas antigas e cursos gratuitos de Excel e Power BI.",
     area: "academica"
   },
   {
@@ -195,13 +199,14 @@ window.LUMIAR_PROPOSTAS = [
   /* ---------------- ACADÊMICA ---------------- */
   {
     area: "academica", pagina: 7, titulo: "Nivelamento Matemático",
-    resumo: "Aulas de base antes de Cálculo I e de Probabilidade e Estatística.",
+    resumo: "Já teve mais de 100 inscritos. Agora é continuar e ampliar.",
     detalhe: [
+      "Projeto criado por Camilly Nobre e Esther Barletta, hoje candidatas a presidente e secretária-geral pela Lumiar. A primeira edição teve mais de 100 inscritos.",
       "Nem toda escola prepara para as exatas que a FEA cobra logo de cara, e tem gente que nunca viu certos conteúdos.",
       "Aulas nas primeiras semanas de cada semestre: base para Cálculo I no 1º semestre e para Introdução à Probabilidade e Estatística no 2º.",
       "Conteúdo organizado pelo CAVC com professores, monitores e voluntários."
     ],
-    busca: "matematica calculo estatistica probabilidade exatas base nivelamento"
+    busca: "matematica calculo estatistica probabilidade exatas base nivelamento camilly camy esther inscritos"
   },
   {
     area: "academica", pagina: 7, titulo: "Aulões antes das provas",
@@ -427,6 +432,55 @@ window.LUMIAR_PROPOSTAS = [
     resumo: "Representantes de todos os colegiados com estratégia comum.",
     detalhe: ["A Secretaria mobiliza os representantes discentes de todos os colegiados, com estratégias comuns e ampla divulgação para os estudantes."],
     busca: "representante discente colegiado"
+  },
+
+  /* ---------------- ENTIDADES ---------------- */
+  {
+    area: "entidades", titulo: "Entidades mais fortes juntas",
+    resumo: "Mais comunicação entre as entidades para negociar com a diretoria da FEA.",
+    detalhe: [
+      "Hoje as entidades enfrentam restrições a atividades e eventos e não têm canal aberto de diálogo com a administração.",
+      "A principal proposta da secretaria: aproximar as entidades entre si para que tenham mais organização e mais peso na articulação com a diretoria."
+    ],
+    busca: "entidade entidades diretoria dialogo articulacao restricao evento"
+  },
+  {
+    area: "entidades", titulo: "AEX pelas entidades",
+    resumo: "Projetos das entidades valendo crédito de extensão, além de Empreendedorismo e Inovação.",
+    detalhe: [
+      "Hoje a disciplina obrigatória de Empreendedorismo e Inovação é praticamente a única fonte de créditos AEX em larga escala, com desgaste de alunos e professores.",
+      "Duas entidades já conseguiram reconhecer projetos como AEX depois de longos processos.",
+      "Usar esse aprendizado e a articulação conjunta para levar a conquista a outras entidades."
+    ],
+    busca: "aex extensao credito curricularizacao empreendedorismo inovacao entidade"
+  },
+  {
+    area: "entidades", titulo: "Professores conhecendo as entidades",
+    resumo: "Apresentar as entidades aos docentes e abrir caminho para parcerias.",
+    detalhe: [
+      "Para um projeto virar extensão, precisa de um docente responsável, e a maior parte dos professores não sabe quais são as entidades nem o que elas fazem.",
+      "Divulgar aos professores as finalidades, a estrutura e os temas de cada entidade, muitos ligados às linhas de pesquisa deles."
+    ],
+    busca: "professor docente parceria pesquisa entidade extensao"
+  },
+  {
+    area: "entidades", titulo: "Conselho de Entidades mais dinâmico",
+    resumo: "Reuniões só com pautas importantes e saindo com encaminhamentos concretos.",
+    detalhe: [
+      "O Conselho é o espaço para construir a aliança entre CAVC e entidades, e das entidades entre si.",
+      "Tratar só pautas que exijam a participação de todas ou de boa parte das entidades, respeitando o tempo de quem representa cada uma.",
+      "Um espaço igualitário: o CAVC passa a mandar representantes como as outras entidades, e a secretaria de entidades só faz a mediação."
+    ],
+    busca: "conselho entidades reuniao pauta representante"
+  },
+  {
+    area: "entidades", titulo: "Entidades menos dependentes do CAVC",
+    resumo: "Autonomia na reserva de espaços e espaço garantido no plano diretor.",
+    detalhe: [
+      "Defender que as entidades possam reservar espaços sem depender do CAVC.",
+      "Fiscalizar o plano diretor da FEA, que precisa incluir espaço para as entidades."
+    ],
+    busca: "espaco sala reserva plano diretor autonomia entidade"
   },
 
   /* ---------------- APSM ---------------- */
@@ -663,11 +717,22 @@ window.LUMIAR_PROPOSTAS = [
     area: "mobilizacao", pagina: 19, titulo: "Federações e conselhos",
     resumo: "A FEA presente em encontros, congressos e conselhos da área.",
     detalhe: [
+      "A nossa continuidade recriou a FENECO, a Federação Nacional dos Estudantes de Economia.",
       "Federações e encontros: FENECO, FENEAD, FENECiC, ENECO e ENEAT.",
       "Conselhos: CORECON-SP, COFECON, CRA-SP, CFA, CRC-SP e CFC.",
       "Divulgar e comparecer a congressos e palestras dos quatro cursos."
     ],
-    busca: "feneco fenead fenecic eneco eneat corecon cra crc congresso encontro"
+    busca: "feneco fenead fenecic eneco eneat corecon cra crc congresso encontro federacao recriou"
+  },
+  {
+    area: "mobilizacao", titulo: "ENECO 2028 na FEA",
+    resumo: "O Encontro Nacional dos Estudantes de Economia vai ser na FEA.",
+    detalhe: [
+      "Em 2028 a FEA recebe o ENECO, que reúne estudantes de Economia do Brasil inteiro.",
+      "É resultado do trabalho da continuidade, que recriou a FENECO.",
+      "Preparar a FEA e os estudantes para receber o encontro e participar dele."
+    ],
+    busca: "eneco encontro nacional economia 2028 feneco sediar"
   },
 
   /* ---------------- COMUNICAÇÃO E VISCONDE ---------------- */
@@ -732,7 +797,28 @@ window.LUMIAR_PROPOSTAS = [
       "Processos revistos sempre a partir do feedback interno."
     ],
     busca: "capacitacao treinamento formacao entrar gestao"
+  },
+  {
+    area: "gestao", titulo: "Gestão que cabe na rotina de quem trabalha",
+    resumo: "Um CAVC organizado para a FEA pós-cotas, em que estatutários também podem trabalhar.",
+    detalhe: [
+      "As cotas trouxeram para a FEA muitos estudantes que estudam e trabalham ao mesmo tempo. A estrutura do CAVC precisa acompanhar essa realidade.",
+      "Adaptar o funcionamento da gestão para que quem tem estágio ou emprego também possa assumir um cargo estatutário.",
+      "Responsabilidades melhor divididas e uma rotina de trabalho pensada para caber em agendas diferentes."
+    ],
+    busca: "trabalha trabalho emprego estagio estatutario pos-cotas cotas rotina horario gestao"
   }
+];
+
+/* "O que a continuidade já fez": aparece antes das propostas. */
+window.LUMIAR_CONQUISTAS = [
+  { marca: "2018", titulo: "Atuária no nome da FEA", texto: "Ciências Atuariais entrou no nome oficial da faculdade graças à atuação estudantil." },
+  { marca: "2021", titulo: "Cotas por renda", texto: "Pela primeira vez, a FEA aprovou cotas por renda, com articulação do CAVC nos colegiados." },
+  { marca: "Economia", titulo: "Fim dos créditos fantasma", texto: "A representação discente apontou créditos não contabilizados na grade que poderiam travar o diploma de muita gente." },
+  { marca: "100+", titulo: "Inscritos no Nivelamento", texto: "O Nivelamento Matemático foi criado por Camilly Nobre e Esther Barletta, candidatas a presidente e secretária-geral." },
+  { marca: "FENECO", titulo: "Federação recriada", texto: "A continuidade recriou a Federação Nacional dos Estudantes de Economia." },
+  { marca: "2028", titulo: "ENECO na FEA", texto: "O Encontro Nacional dos Estudantes de Economia vai acontecer na FEA." },
+  { marca: "1ª ed.", titulo: "Festival Paul Singer", texto: "Uma semana acadêmica inédita sobre os temas que as grades deixam de lado." }
 ];
 
 /* Estrutura do CAVC na proposta da Lumiar.
@@ -747,7 +833,7 @@ window.LUMIAR_ESTRUTURA = [
       { nome: "Gestão de Pessoas", area: "gestao", resumo: "Cuida para que a gestão seja um bom lugar de trabalhar: integração, acompanhamento dos membros e capacitações." },
       { nome: "Comunicação", area: "comunicacao", resumo: "Nova secretaria, no lugar da de Marketing: cria conteúdo, cobre eventos, cuida da identidade do CAVC e mantém a ouvidoria." },
       { nome: "Finanças", pendente: true },
-      { nome: "Entidades", pendente: true },
+      { nome: "Entidades", area: "entidades", resumo: "Une as mais de vinte entidades da FEA: Conselho de Entidades, créditos AEX e mais autonomia e espaço." },
       { nome: "Representação Discente", area: "rd", resumo: "Leva a voz dos estudantes aos colegiados da FEA, com consulta aos alunos e transparência sobre o que se decide." }
     ]
   },
@@ -782,8 +868,23 @@ window.LUMIAR_FAQ = [
   },
   {
     pergunta: "O que o CAVC já conquistou?",
-    resposta: "Pela representação discente, a FEA aprovou cotas por renda em 2021, incluiu Ciências Atuariais no nome oficial em 2018 e corrigiu os \"créditos fantasma\" da grade de Economia, que poderiam travar o diploma de muita gente.",
-    busca: "conquista historia cotas renda atuaria creditos fantasma"
+    resposta: "Pela representação discente, a FEA aprovou cotas por renda em 2021, incluiu Ciências Atuariais no nome oficial em 2018 e corrigiu os \"créditos fantasma\" da grade de Economia. A continuidade também recriou a FENECO, trouxe o ENECO de 2028 para a FEA, criou o Festival Paul Singer e o Nivelamento Matemático, que teve mais de 100 inscritos.",
+    busca: "conquista conquistou historia cotas renda atuaria creditos fantasma feito fizeram realizacoes"
+  },
+  {
+    pergunta: "O que são a FENECO e o ENECO?",
+    resposta: "A FENECO é a Federação Nacional dos Estudantes de Economia, que a nossa continuidade recriou. O ENECO é o Encontro Nacional dos Estudantes de Economia, e a edição de 2028 vai ser na FEA.",
+    busca: "feneco eneco federacao encontro nacional economia 2028"
+  },
+  {
+    pergunta: "Quem trabalha pode fazer parte do CAVC?",
+    resposta: "Pode, e deve. Depois das cotas, muita gente na FEA estuda e trabalha ao mesmo tempo. A Lumiar quer adaptar o funcionamento da gestão para que quem tem estágio ou emprego também possa assumir até cargos estatutários.",
+    busca: "trabalha trabalho emprego estagio participar gestao estatutario pos-cotas tempo"
+  },
+  {
+    pergunta: "Como faço para participar da Lumiar?",
+    resposta: "",
+    busca: "participar entrar ajudar fazer parte campanha voluntario"
   },
   {
     pergunta: "Quem pode votar e quando é a eleição?",

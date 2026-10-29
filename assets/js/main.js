@@ -249,7 +249,8 @@
     });
     org.appendChild(el("div", { classe: "org__topo" }, [
       el("h3", { classe: "org__rotulo", texto: "Diretoria estatutária" }),
-      diretoria
+      diretoria,
+      el("p", { classe: "org__nota", texto: "Pensada para a FEA pós-cotas: o funcionamento da gestão se adapta para que quem trabalha ou estagia também possa assumir um cargo estatutário." })
     ]));
     org.appendChild(el("div", { classe: "org__tronco", "aria-hidden": "true" }));
   }
@@ -279,6 +280,15 @@
     ]));
   });
   org.appendChild(ramos);
+
+  /* ---------- O que a continuidade já fez ---------- */
+  (window.LUMIAR_CONQUISTAS || []).forEach(function (c) {
+    $("#conquistas-lista").appendChild(el("div", { classe: "conquista" }, [
+      el("span", { classe: "conquista__marca", texto: c.marca }),
+      el("strong", { texto: c.titulo }),
+      el("p", { texto: c.texto })
+    ]));
+  });
 
   /* ---------- Números do herói ---------- */
   var cursos = {};
@@ -424,6 +434,8 @@
         (e.datas ? "A eleição acontece em " + e.datas + (e.locais ? ", com " + e.locais : "") + "." : "As datas e os locais de votação serão divulgados pela comissão eleitoral, e a gente avisa aqui e no Instagram.");
     } else if (/fal[oa]/.test(f.pergunta)) {
       f.resposta = "Manda sua ideia pelo formulário aqui do site ou fala direto com a gente: " + textoContatos() + ".";
+    } else if (/particip/.test(f.pergunta)) {
+      f.resposta = "Não existe participação pequena: dá para ajudar na campanha, levar a conversa para a sua turma ou só mandar uma ideia. Fala com a gente: " + textoContatos() + ".";
     }
   });
   var listaFaq = $("#faq-lista");
@@ -462,26 +474,96 @@
     }
   });
 
-  /* ---------- Pergunte à Lumiar ---------- */
+  /* ---------- Lumis: o chat que responde sobre a Lumiar ---------- */
   var PARADAS = ("a o e as os de da do das dos em no na nos nas um uma uns umas para pra pro por com sem que se " +
     "como qual quais quando onde vai vao vou ter tem tera sobre isso essa esse esta este ja mais muito eu voce voces " +
     "vcs vc nos lumiar chapa proposta propostas fazer faz fazem sera ser e ou ao aos sim nao algum alguma oque " +
-    "quero queria gostaria saber pode podem existe vai vou").split(" ");
+    "quero queria gostaria saber pode podem existe me fala conta explica sobre ai la tipo coisa coisas gente vou " +
+    "sao sera seriam estao estava foi era tinha teve vao").split(" ");
+
+  // Começo da palavra digitada -> palavras que aparecem no conteúdo
+  var SINONIMOS = {
+    bixo: "calouro ingressante recepcao", bixe: "calouro ingressante recepcao", calou: "calouro ingressante recepcao",
+    ingre: "calouro ingressante", primeiro: "calouro",
+    festa: "festa evento hh", role: "festa evento", balad: "festa evento", open: "festa evento",
+    grana: "auxilio bolsa permanencia", dinhe: "auxilio bolsa permanencia", bolsa: "bolsa auxilio",
+    psico: "saude mental psicologo", terap: "saude mental terapia", ansie: "saude mental", depre: "saude mental",
+    burno: "saude mental", exame: "prova aulao", provas: "prova aulao",
+    empreg: "estagio trabalha", traba: "trabalha estagio", estag: "estagio",
+    comid: "vivencia lanchonete", lanch: "vivencia lanchonete", cafe: "vivencia", canti: "vivencia",
+    morad: "crusp moradia", morar: "crusp moradia", moro: "crusp moradia", mora: "crusp moradia", repub: "crusp moradia",
+    gay: "lgbt", queer: "lgbt queer", lgbt: "lgbt", trans: "trans lgbt",
+    racis: "racismo negro denuncia", negro: "negro", negra: "negro", preto: "negro", preta: "negro",
+    mulhe: "mulher", femin: "mulher", menin: "mulher",
+    cadei: "acessibilidade pcd", defic: "pcd acessibilidade", acess: "acessibilidade",
+    voto: "votar eleicao", votar: "votar eleicao", eleic: "eleicao votar", urna: "votar eleicao",
+    ingle: "ingles intercambio idioma", inter: "intercambio", exter: "intercambio",
+    mater: "disciplina materia", disci: "disciplina",
+    calcu: "matematica nivelamento calculo", estati: "estatistica nivelamento", matem: "matematica nivelamento",
+    insta: "instagram contato", whats: "whatsapp contato", zap: "whatsapp contato", email: "email contato",
+    telef: "contato whatsapp", conta: "contato", falar: "contato",
+    conqu: "conquista", fizer: "conquista feito", feito: "conquista feito",
+    entid: "entidade", grade: "grade curricular", curri: "grade curricular",
+    cota: "cotas", cotas: "cotas"
+  };
+
+  // Palavras que puxam cada área (para "o que vocês propõem para festas?")
+  var PALAVRAS_AREA = {
+    espacos: ["espac", "vivenc", "infra", "sala", "predi", "novao"],
+    acolhimento: ["calou", "bixo", "bixe", "recep", "acolh", "ingre"],
+    academica: ["acade", "aula", "ensin", "pesqu", "nivel"],
+    rd: ["repre", "coleg", "rd", "rds"],
+    entidades: ["entid"],
+    apsm: ["perma", "saude", "apsm", "auxil", "diver", "crusp"],
+    eventos: ["event", "festa", "hh", "role"],
+    mobilizacao: ["mobil", "polit", "movim"],
+    comunicacao: ["comun", "visco", "jorna", "ouvid"],
+    gestao: ["gesta", "intern"]
+  };
+
+  var PESSOAS = (function () {
+    var lista = [];
+    (CFG.estatutarios || []).forEach(function (m) { lista.push(m); });
+    (CFG.chapa || []).forEach(function (m) {
+      if (!lista.some(function (x) { return x.nome === m.nome; })) lista.push(m);
+    });
+    lista.forEach(function (m) {
+      var chaves = (m.apelidos || []).map(normalizar);
+      var primeiro = normalizar(m.nome.split(" ")[0]);
+      if (primeiro.length >= 4 && chaves.indexOf(primeiro) === -1) chaves.push(primeiro);
+      m._chaves = chaves;
+    });
+    return lista;
+  })();
 
   function palavras(s) {
     return normalizar(s).replace(/[^a-z0-9\s-]/g, " ").split(/\s+/).filter(function (w) {
       return w.length > 2 && PARADAS.indexOf(w) === -1;
     });
   }
+  function todasPalavras(s) { return normalizar(s).replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean); }
+  function comSinonimos(lista) {
+    var out = lista.slice();
+    lista.forEach(function (w) {
+      Object.keys(SINONIMOS).forEach(function (k) {
+        if (w.indexOf(k) === 0) SINONIMOS[k].split(" ").forEach(function (x) { if (out.indexOf(x) === -1) out.push(x); });
+      });
+    });
+    return out;
+  }
   function raiz(w) { return w.length > 5 ? w.slice(0, 5) : w; }
   // Compara pelo começo das palavras ("social" não deve casar com "psicossocial")
-  function inicios(s) { return " " + normalizar(s).replace(/[^a-z0-9]+/g, " "); }
+  function inicios(s) { return " " + normalizar(s).replace(/[^a-z0-9]+/g, " ") + " "; }
+  function tem(lista, prefixos) {
+    return lista.some(function (w) { return prefixos.some(function (p) { return w.indexOf(p) === 0; }); });
+  }
 
-  function pontuar(pergunta, titulo, corpo, extra) {
+  function pontuar(lista, titulo, corpo, extra) {
     var t = inicios(titulo), c = inicios(corpo), x = inicios(extra);
     var pts = 0;
-    palavras(pergunta).forEach(function (w) {
-      var r = " " + raiz(w);
+    lista.forEach(function (w) {
+      // palavras curtas ("cavc", "hh") valem só inteiras: "cavc" não puxa "cavcebo"
+      var r = " " + raiz(w) + (w.length <= 4 ? " " : "");
       if (t.indexOf(r) !== -1) pts += 3;
       if (x.indexOf(r) !== -1) pts += 2;
       if (c.indexOf(r) !== -1) pts += 1;
@@ -489,71 +571,232 @@
     return pts;
   }
 
-  function botaoProposta(p, rotulo) {
-    var b = el("button", { type: "button", classe: "chat__link", texto: rotulo || p.titulo });
-    b.addEventListener("click", function () { mostrarProposta(p.id); });
+  function botao(rotulo, acao) {
+    var b = el("button", { type: "button", classe: "chat__link", texto: rotulo });
+    b.addEventListener("click", acao);
     return b;
   }
+  function botaoProposta(p, rotulo) { return botao(rotulo || p.titulo, function () { mostrarProposta(p.id); }); }
+  function botaoArea(id, rotulo) { return botao(rotulo || nomeArea(id), function () { abrirArea(id, true); }); }
+  function irPara(id, rotulo) { return botao(rotulo, function () { document.getElementById(id).scrollIntoView(); }); }
+  function linha(filhos, classe) { return el("p", { classe: classe || "chat__relacionadas" }, filhos); }
+  function listaBotoes(prefixo, botoes) {
+    var p = linha([prefixo]);
+    botoes.forEach(function (b, i) { if (i) p.appendChild(document.createTextNode(" · ")); p.appendChild(b); });
+    return p;
+  }
+  function blocoContatos() {
+    var p = linha([]);
+    function add(a) { if (p.childNodes.length) p.appendChild(document.createTextNode(" · ")); p.appendChild(a); }
+    if (CFG.email) add(el("a", { href: "mailto:" + CFG.email, texto: CFG.email }));
+    CONTATOS.forEach(function (c) { add(el("a", { href: linkWhats(c), target: "_blank", rel: "noopener", texto: "WhatsApp " + c.nome })); });
+    if (CFG.instagram) add(el("a", { href: CFG.instagram, target: "_blank", rel: "noopener", texto: CFG.instagramUsuario || "Instagram" }));
+    if (!p.childNodes.length) add(el("a", { href: "#ideia", texto: "formulário de ideias" }));
+    return p;
+  }
 
-  // Responde em texto corrido, com o conteúdo da proposta mais próxima
-  function responder(pergunta) {
-    var faqs = FAQ.map(function (f) { return { f: f, s: pontuar(pergunta, f.pergunta, f.resposta, f.busca) }; })
+  /* Cada função devolve a resposta (lista de elementos) ou null para passar adiante */
+  var INTENCOES = [
+    // Oi / tudo bem?
+    function (q, todas) {
+      var SAUDA = "oi oie ola eai e ai opa salve bom boa dia tarde noite tudo bem bom lumis hey hello td blz beleza".split(" ");
+      if (!todas.length || !todas.every(function (w) { return SAUDA.indexOf(w) !== -1; })) return null;
+      return [el("p", { texto: "Oi! Eu sou a Lumis, da chapa Lumiar. Posso te contar das propostas, de quem está na chapa, do que a gente já fez e de como votar. Pergunta aí!" })];
+    },
+    // Obrigado
+    function (q, todas) {
+      if (!tem(todas, ["obrigad", "brigad", "valeu", "vlw", "agradec"])) return null;
+      return [el("p", { texto: "De nada! Se quiser conversar com alguém da chapa, chama a gente:" }), blocoContatos()];
+    },
+    // Quem é você?
+    function (q, todas) {
+      if (!(tem(todas, ["lumis"]) || (tem(todas, ["quem"]) && tem(todas, ["voce", "vc"])))) return null;
+      return [el("p", { texto: "Eu sou a Lumis, a assistente do site da Lumiar. Respondo com o que está na nossa carta programa e no manifesto. Não sou uma pessoa: para falar com a chapa, use os contatos abaixo." }), blocoContatos()];
+    },
+    // Instagram, WhatsApp, e-mail
+    function (q, todas) {
+      if (!tem(todas, ["insta", "whats", "zap", "email", "e-mail", "telefo", "contat", "numero", "celular"])) return null;
+      var t = "Fala com a gente por aqui:";
+      if (tem(todas, ["insta"]) && CFG.instagram) t = "Nosso Instagram é " + (CFG.instagramUsuario || CFG.instagram) + ". E também dá para falar com a gente por:";
+      return [el("p", { texto: t }), blocoContatos()];
+    },
+    // Quem trabalha pode fazer parte?
+    function (q, todas) {
+      if (!(tem(todas, ["trabalh", "emprego", "estagi"]) && tem(todas, ["particip", "parte", "estatut", "cargo", "gestao", "pode", "posso", "entrar"]))) return null;
+      var f = FAQ.filter(function (x) { return /trabalha/.test(normalizar(x.pergunta)); })[0];
+      var g = PROPOSTAS.filter(function (p) { return /rotina de quem trabalha/.test(p.titulo); })[0];
+      var out = [el("p", { texto: f ? f.resposta : "Pode! A Lumiar quer uma gestão que caiba na rotina de quem trabalha." })];
+      if (g) out.push(linha(["Tem a ver: ", botaoProposta(g)]));
+      return out;
+    },
+    // Alguém da chapa pelo nome ou apelido
+    function (q, todas) {
+      // "marco" também é o mês (março): só conta como nome se a pergunta tiver "quem"
+      var AMBIGUOS = ["marco"];
+      var achadas = PESSOAS.filter(function (m) {
+        return m._chaves.some(function (k) { return todas.indexOf(k) !== -1 && (AMBIGUOS.indexOf(k) === -1 || todas.indexOf("quem") !== -1); });
+      });
+      if (!achadas.length) return null;
+      var out = [];
+      achadas.slice(0, 3).forEach(function (m) {
+        var t = m.nome + " estuda " + (m.curso || "na FEA").replace(" · ", ", ") + ". ";
+        t += m.cargo ? "Concorre a " + m.cargo.toLowerCase() + " pela Lumiar." : "Assina o manifesto da Lumiar.";
+        if (m.nota) t += " " + m.nota;
+        out.push(el("p", { texto: t }));
+      });
+      out.push(linha([irPara("chapa", "Ver a chapa toda →")]));
+      return out;
+    },
+    // Presidente, vice, tesouraria…
+    function (q, todas) {
+      var CARGOS = { presid: "presidente", vice: "vice-presidente", secre: "secretária-geral", tesou: "co-tesoureira" };
+      var est = (CFG.estatutarios || []).filter(function (m) { return m.nome; });
+      if (!est.length) return null;
+      // "secretaria" sozinha é das secretarias do CAVC; só vira cargo com "geral"
+      var pedido = Object.keys(CARGOS).filter(function (k) { return tem(todas, [k]) && (k !== "secre" || tem(todas, ["geral"])); });
+      var geral = tem(todas, ["estatut", "diretor", "candidat", "cargo", "cabeca"]);
+      if (!pedido.length && !geral) return null;
+      var alvo = pedido.length && !geral
+        ? est.filter(function (m) { return pedido.some(function (k) { return normalizar(m.cargo).indexOf(CARGOS[k].slice(0, 5)) === 0; }); })
+        : est;
+      if (!alvo.length) alvo = est;
+      var out = [];
+      if (alvo.length === 1) {
+        var m1 = alvo[0];
+        out.push(el("p", { texto: "Quem concorre a " + m1.cargo.toLowerCase() + " pela Lumiar é " + m1.nome + ", de " + (m1.curso || "").replace(" · ", ", ") + "." + (m1.nota ? " " + m1.nota : "") }));
+      } else {
+        out.push(el("p", { texto: alvo.length === est.length ? "A diretoria estatutária da Lumiar:" : "Quem concorre:" }));
+        var ul = el("ul");
+        alvo.forEach(function (m) {
+          ul.appendChild(el("li", { texto: m.cargo + ": " + m.nome + " (" + (m.curso || "").replace(" · ", ", ") + ")" + (m.nota ? ". " + m.nota : "") }));
+        });
+        out.push(ul);
+      }
+      out.push(linha([irPara("chapa", "Ver a chapa toda →")]));
+      return out;
+    },
+    // Quem está na chapa?
+    function (q, todas) {
+      if (!(tem(todas, ["quem", "quant"]) && tem(todas, ["chapa", "integr", "membr", "pessoa", "parte", "compo", "lumiar", "estud"]))) return null;
+      if (tem(todas, ["pode", "posso", "trabalh", "como", "vota"])) return null;
+      var chapa = CFG.chapa || [];
+      var cursos = {};
+      chapa.forEach(function (m) { var c = (m.curso || "").split(" ·")[0]; if (c) cursos[c] = (cursos[c] || 0) + 1; });
+      var est = (CFG.estatutarios || []).filter(function (m) { return m.nome; });
+      var out = [el("p", { texto: "A Lumiar tem " + chapa.length + " estudantes: " + Object.keys(cursos).map(function (c) { return cursos[c] + " de " + c; }).join(", ") + "." })];
+      if (est.length) out.push(el("p", { texto: "Na diretoria: " + est.map(function (m) { return m.nome.split(" ").slice(0, 2).join(" ") + " (" + m.cargo.toLowerCase() + ")"; }).join(", ") + "." }));
+      out.push(linha([irPara("chapa", "Ver todo mundo →")]));
+      return out;
+    },
+    // Manifesto
+    function (q, todas) {
+      if (!tem(todas, ["manifest"])) return null;
+      var out = [el("p", { texto: "O manifesto diz por que somos Lumiar: iluminar o presente e construir o futuro, com uma FEA mais plural, inclusiva e acolhedora, e um CAVC perto dos estudantes. Ele também traz a Carta aos estudantes, sobre política no coletivo, permanência, entidades, representação e continuidade crítica." })];
+      var bts = [irPara("manifesto", "Ler aqui no site →")];
+      if (CFG.manifestoPdf) bts.push(el("a", { href: CFG.manifestoPdf, target: "_blank", rel: "noopener", texto: "Abrir o PDF" }));
+      out.push(listaBotoes("", bts));
+      return out;
+    },
+    // Visão geral: "quais são as propostas?"
+    function (q, todas, lista) {
+      var geral = tem(todas, ["propost", "plano", "program", "ideias"]) || (tem(todas, ["fazer", "faz"]) && tem(todas, ["voces", "vcs", "lumiar", "chapa"]));
+      if (!geral) return null;
+      var areaPedida = Object.keys(PALAVRAS_AREA).filter(function (id) { return tem(todas, PALAVRAS_AREA[id]); });
+      if (areaPedida.length) return null; // fica com a resposta por área
+      if (lista.filter(function (w) { return !/^(propost|plano|program|ideia|quais|todas|tudo|lista|principa|fazer|faz)/.test(w); }).length > 0) return null;
+      var out = [el("p", { texto: "São " + PROPOSTAS.length + " propostas em " + AREAS.length + " áreas. Clica numa área para ver:" })];
+      out.push(listaBotoes("", AREAS.map(function (a) { return botaoArea(a.id, a.nome + " (" + PROPOSTAS.filter(function (p) { return p.area === a.id; }).length + ")"); })));
+      return out;
+    },
+    // Uma área inteira: "o que tem de eventos?"
+    function (q, todas) {
+      if (!/(o que (tem|voces|vcs|a lumiar|e |eh )|quais|propost|tudo|todas|lista)/.test(normalizar(q) + " ")) return null;
+      var areas = Object.keys(PALAVRAS_AREA).filter(function (id) { return tem(todas, PALAVRAS_AREA[id]); });
+      if (areas.length !== 1) return null;
+      var a = AREAS.filter(function (x) { return x.id === areas[0]; })[0];
+      var props = PROPOSTAS.filter(function (p) { return p.area === a.id; });
+      var out = [el("p", {}, [el("strong", { texto: a.nome + ". " }), a.intro || ""])];
+      out.push(listaBotoes("Propostas: ", props.map(function (p) { return botaoProposta(p); })));
+      return out;
+    }
+  ];
+
+  // Busca geral: FAQ, propostas e manifesto
+  function buscarConteudo(q, lista) {
+    var faqs = FAQ.map(function (f) { return { f: f, s: pontuar(lista, f.pergunta, f.resposta, f.busca) }; })
       .filter(function (r) { return r.s >= 3; }).sort(function (a, b) { return b.s - a.s; });
     var props = PROPOSTAS.map(function (p) {
-      return { p: p, s: pontuar(pergunta, p.titulo + " " + p.resumo, (p.detalhe || []).join(" "), p.busca + " " + nomeArea(p.area)) };
+      return { p: p, s: pontuar(lista, p.titulo + " " + p.resumo, (p.detalhe || []).join(" "), p.busca + " " + nomeArea(p.area)) };
     }).filter(function (r) { return r.s >= 2; }).sort(function (a, b) { return b.s - a.s; });
-
-    var corpo = [];
-    if (faqs.length && (!props.length || faqs[0].s >= props[0].s)) {
-      corpo.push(el("p", { texto: faqs[0].f.resposta }));
-      if (props.length) {
-        corpo.push(el("p", { classe: "chat__relacionadas" }, ["Tem a ver: ", botaoProposta(props[0].p)]));
-      }
-      return corpo;
+    var trechos = [];
+    if (window.LUMIAR_MANIFESTO) {
+      window.LUMIAR_MANIFESTO.carta.forEach(function (parte) {
+        parte.paragrafos.forEach(function (t) { trechos.push({ parte: parte.titulo, t: t.replace(/\*\*/g, ""), s: pontuar(lista, parte.titulo, t, "") }); });
+      });
+      trechos = trechos.filter(function (r) { return r.s >= 4; }).sort(function (a, b) { return b.s - a.s; });
     }
 
+    var melhorFaq = faqs.length ? faqs[0].s : 0;
+    var melhorProp = props.length ? props[0].s : 0;
+    var out = [];
+
+    if (melhorFaq && melhorFaq >= melhorProp) {
+      out.push(el("p", { texto: faqs[0].f.resposta }));
+      if (props.length) out.push(linha(["Tem a ver: ", botaoProposta(props[0].p)]));
+      return out;
+    }
     if (props.length) {
       var p = props[0].p;
-      corpo.push(el("p", {}, [el("strong", { texto: p.titulo + ". " }), p.resumo]));
+      var afirmativa = /^(vai|vao|tem|tera|terao|havera|existe|rola|vai ter|voces vao)/.test(normalizar(q).trim());
+      out.push(el("p", {}, [afirmativa ? "Tem sim! " : "", el("strong", { texto: p.titulo + ". " }), p.resumo]));
       if (p.detalhe && p.detalhe.length) {
         var ul = el("ul");
         p.detalhe.forEach(function (d) { ul.appendChild(el("li", { texto: d })); });
-        corpo.push(ul);
+        out.push(ul);
       }
       var outras = props.slice(1, 3).filter(function (r) { return r.s >= props[0].s - 3; });
-      if (outras.length) {
-        var rel = el("p", { classe: "chat__relacionadas" }, ["Também: "]);
-        outras.forEach(function (r, i) {
-          if (i) rel.appendChild(document.createTextNode(" · "));
-          rel.appendChild(botaoProposta(r.p));
-        });
-        corpo.push(rel);
-      }
-      corpo.push(el("p", { classe: "chat__relacionadas" }, [botaoProposta(p, "Ver na lista de propostas →")]));
-      return corpo;
+      if (outras.length) out.push(listaBotoes("Também: ", outras.map(function (r) { return botaoProposta(r.p); })));
+      out.push(linha([botaoProposta(p, "Ver na lista de propostas →")]));
+      return out;
     }
+    if (trechos.length) {
+      out.push(el("p", { texto: "No manifesto, em \"" + trechos[0].parte + "\", a gente diz:" }));
+      out.push(el("p", { classe: "msg__citacao", texto: trechos[0].t }));
+      out.push(linha([irPara("manifesto", "Ler o manifesto →")]));
+      return out;
+    }
+    return null;
+  }
 
-    corpo.push(el("p", { texto: "Isso ainda não está na nossa carta, mas a gente quer saber. Manda pra gente:" }));
-    var contatos = el("p", { classe: "chat__relacionadas" });
-    if (CFG.email) contatos.appendChild(el("a", { href: "mailto:" + CFG.email, texto: CFG.email }));
-    CONTATOS.forEach(function (c) {
-      if (contatos.childNodes.length) contatos.appendChild(document.createTextNode(" · "));
-      contatos.appendChild(el("a", { href: linkWhats(c), target: "_blank", rel: "noopener", texto: "WhatsApp " + c.nome }));
-    });
-    if (CFG.instagram) {
-      if (contatos.childNodes.length) contatos.appendChild(document.createTextNode(" · "));
-      contatos.appendChild(el("a", { href: CFG.instagram, target: "_blank", rel: "noopener", texto: CFG.instagramUsuario || "Instagram" }));
+  // Siglas curtas que o filtro de palavras jogaria fora
+  var SIGLAS = { rd: "representacao discente colegiado", rds: "representacao discente colegiado", rc: "representante classe",
+    rcs: "representante classe", ca: "cavc", ic: "iniciacao cientifica pesquisa", hh: "hh festa", cao: "comissao anti-opressao" };
+
+  function responder(q) {
+    var todas = todasPalavras(q);
+    var base = palavras(q);
+    todas.forEach(function (w) { if (SIGLAS[w]) SIGLAS[w].split(" ").forEach(function (x) { base.push(x); }); });
+    var lista = comSinonimos(base);
+    for (var i = 0; i < INTENCOES.length; i++) {
+      var r = INTENCOES[i](q, todas, lista);
+      if (r) return r;
     }
-    if (!contatos.childNodes.length) contatos.appendChild(el("a", { href: "#ideia", texto: "formulário de ideias" }));
-    corpo.push(contatos);
-    return corpo;
+    var r2 = buscarConteudo(q, lista);
+    if (r2) return r2;
+    return [
+      el("p", { texto: "Hmm, isso eu ainda não sei responder, e pode não estar na carta. Manda pra gente que alguém da chapa te responde:" }),
+      blocoContatos(),
+      listaBotoes("Ou tenta: ", ["Quais são as propostas?", "Quem é a presidente?", "O que vocês já fizeram?"].map(function (s) {
+        return botao(s, function () { perguntar(s); });
+      }))
+    ];
   }
 
   var caixaMsgs = $("#chat-mensagens");
   function mensagem(quem, filhos) {
     var m = el("div", { classe: "msg msg--" + quem });
     if (quem === "lumiar") {
-      m.appendChild(el("div", { classe: "msg__autor" }, [el("img", { src: "assets/img/farol-cobre.png", alt: "" }), "Lumiar"]));
+      m.appendChild(el("div", { classe: "msg__autor" }, [el("img", { src: "assets/img/farol-cobre.png", alt: "" }), "Lumis"]));
     }
     filhos.forEach(function (f) { m.appendChild(f); });
     caixaMsgs.appendChild(m);
@@ -572,9 +815,9 @@
     }, 450);
   }
 
-  mensagem("lumiar", [el("p", { texto: "Oi! Pergunta o que quiser sobre as propostas que eu respondo com o que está na carta: aulão, festas, CRUSP, estágio, calouros…" })]);
+  mensagem("lumiar", [el("p", { texto: "Oi! Eu sou a Lumis. Pergunta o que quiser: propostas, quem está na chapa, o que já fizemos, como votar, o que é o CAVC…" })]);
 
-  ["Vai ter aulão?", "Como funciona o lote social?", "O que tem para calouros?", "E a saúde mental?", "Como falo com a chapa?"].forEach(function (s) {
+  ["Quais são as propostas?", "Quem é a presidente?", "Vai ter aulão?", "O que vocês já fizeram?", "Como funciona o lote social?", "Quem trabalha pode participar?"].forEach(function (s) {
     var b = el("button", { type: "button", texto: s });
     b.addEventListener("click", function () { perguntar(s); });
     $("#chat-sugestoes").appendChild(b);

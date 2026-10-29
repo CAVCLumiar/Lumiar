@@ -475,6 +475,27 @@ p { margin: 0 0 1em; }
 }
 .org__cargo strong { font-family: var(--fonte-titulo); font-weight: 700; font-size: 1.05rem; line-height: 1.25; }
 
+.org__nota { margin: 18px auto 0; max-width: 60ch; font-size: 0.95rem; opacity: 0.88; }
+
+/* O que a continuidade já fez */
+.conquistas {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-top: 36px;
+}
+.conquista {
+  flex: 0 1 250px; text-align: center;
+  background: rgba(255, 248, 234, 0.07); border: 1.5px solid rgba(244, 174, 50, 0.3);
+  border-radius: 20px; padding: 22px 18px;
+}
+.conquista__marca {
+  display: block; font-family: var(--fonte-titulo); font-variation-settings: "SOFT" 100, "WONK" 1;
+  font-weight: 800; font-size: clamp(1.8rem, 3.6vw, 2.4rem); line-height: 1.05; color: var(--mostarda); margin-bottom: 8px;
+}
+.conquista strong { display: block; font-size: 1.05rem; margin-bottom: 6px; }
+.conquista p { margin: 0; font-size: 0.93rem; opacity: 0.85; line-height: 1.45; }
+@media (max-width: 600px) { .conquista { flex-basis: 100%; } }
+.secao--marrom .introducao { color: var(--creme); opacity: 0.85; }
+.msg__citacao { border-left: 3px solid var(--mostarda); padding-left: 10px; font-style: italic; color: var(--tinta-suave); }
+
 .org__tronco { width: 0; height: 36px; margin-inline: auto; border-left: var(--fio); }
 .org__ramos {
   position: relative;

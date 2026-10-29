@@ -24,11 +24,11 @@ carta/                  PDF final da carta programa
 
 1. **Início**: farol com o feixe varrendo e o lema girando, como no selo.
 2. **Manifesto**: abertura do manifesto e a "Carta aos estudantes" em partes que abrem e fecham.
-3. **O que muda para você**: quatro destaques.
+3. **O que a continuidade já fez** (`LUMIAR_CONQUISTAS` em `conteudo.js`) e **O que muda para você**: quatro destaques.
 4. **Propostas**: sanfona por área; cada proposta mostra uma linha e abre o detalhe. Busca, "abrir/fechar todas" e estrela ☆ para marcar (fica salvo no navegador de quem marcou).
 5. **Estrutura**: organograma com a diretoria estatutária no topo e secretarias e áreas abaixo; cada frente leva às suas propostas.
 6. **A chapa**: cargos estatutários em destaque e quem assina o manifesto (lidos de `config.js`).
-7. **Pergunte à Lumiar**: chat que responde direto com o conteúdo da proposta mais próxima. Não usa IA nem servidor: procura palavras em `conteudo.js`. Sem resposta, indica e-mail e WhatsApp.
+7. **Converse com a Lumis**: chat que responde sobre propostas, áreas, pessoas e cargos da chapa (reconhece apelidos), conquistas, manifesto, contatos e votação. Não usa IA nem servidor: procura palavras em `conteudo.js`, `config.js` e `manifesto.js`. Apelidos ficam em `estatutarios` no `config.js`; sinônimos e siglas no começo da seção Lumis em `main.js`.
 8. **Tem uma ideia?**: formulário que abre o e-mail (ou um Google Forms) com a sugestão.
 9. **Dúvidas** e **Participe**.
 
@@ -42,7 +42,7 @@ carta/                  PDF final da carta programa
 
 ## Pendências de conteúdo
 
-- Seções da carta ainda sem texto: Conjuntura (texto incompleto), Noções de CAVC, Estatutários, Tesouraria, Finanças, Entidades.
+- Seções da carta ainda sem texto: Conjuntura (texto incompleto), Noções de CAVC, Estatutários, Tesouraria, Finanças.
 - Formulário de "Quero ajudar", datas e locais da eleição.
 - Conferir a regra de quem vota no regimento eleitoral (a FAQ diz "estudantes de graduação da FEA").
 
