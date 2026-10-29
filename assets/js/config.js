@@ -25,9 +25,8 @@ window.LUMIAR_CONFIG = {
   // Formulário para quem quer ajudar na campanha / entrar na gestão
   formularioParticipe: "",
 
-  // Carta programa em PDF. Quando estiver pronta, coloque o arquivo em /carta/
-  // e preencha com "carta/carta-programa.pdf". Os botões "ver na carta" aparecem sozinhos.
-  cartaUrl: "",
+  // Carta programa em PDF (versão comprimida para a web). Os botões "ler na carta" usam este arquivo.
+  cartaUrl: "carta/carta-programa-lumiar-2027.pdf",
 
   // Eleição do CAVC
   eleicao: {
@@ -44,11 +43,13 @@ window.LUMIAR_CONFIG = {
     { cargo: "Vice-presidente", nome: "Guilherme Lima Santos Junior", curso: "Economia · 2º ano", apelidos: ["lima", "guilherme", "gui"] },
     { cargo: "Secretária-geral", nome: "Esther Barletta Efraim", curso: "Economia · 2º ano", apelidos: ["esther"],
       nota: "Criou, com a Camilly Nobre, o Nivelamento Matemático, que teve mais de 100 inscritos." },
-    { cargo: "Co-tesoureira", nome: "Yasmim Yukie Oaira Siqueira", curso: "Administração · 2º ano", apelidos: ["yukie", "yasmim"] },
-    { cargo: "Co-tesoureira", nome: "Kamila Araújo Cecílio", curso: "Contabilidade · 2º ano", apelidos: ["kamis", "kamila"] }
+    { cargo: "Co-tesoureira", nome: "Yasmim Yukie Oaira Siqueira", curso: "Administração · 2º ano", apelidos: ["yukie", "yasmim"],
+      nota: "Entrou na FEA pelo Provão Paulista, mora no CRUSP e se aproximou do CAVC pelo Apoio Psicossocial." },
+    { cargo: "Co-tesoureira", nome: "Kamila Araújo Cecílio", curso: "Contabilidade · 2º ano", apelidos: ["kamis", "kamila"],
+      nota: "Conheceu a Contabilidade no curso técnico, está na FEA Júnior e coordena divulgação, marketing e vendas do CAVC Idiomas." }
   ],
 
-  // Quem assina o manifesto (opcional: cargo e foto)
+  // Quem assina a carta programa (opcional: cargo e foto)
   chapa: [
     { nome: "Anallú Novais Gusmão", curso: "Contabilidade · 1º ano" },
     { nome: "Camilly Nobre Santos", curso: "Economia · 2º ano" },
@@ -56,10 +57,13 @@ window.LUMIAR_CONFIG = {
     { nome: "Eduarda Braga de Aguiar Machado", curso: "Economia · 2º ano" },
     { nome: "Esther Barletta Efraim", curso: "Economia · 2º ano" },
     { nome: "Felipe Francischetti Issa de Souza", curso: "Economia · 2º ano" },
+    { nome: "Gabriel Fernandes", curso: "Administração · 2º ano" },
     { nome: "Guilherme Lima Santos Junior", curso: "Economia · 2º ano" },
+    { nome: "Henrique Mello de Moura", curso: "Economia · 2º ano" },
     { nome: "Isabella Vieira Barbosa", curso: "Economia · 2º ano" },
     { nome: "João Pedro de Godoy", curso: "Contabilidade · 1º ano" },
     { nome: "João Pedro Fonsi Rosa", curso: "Economia · 3º ano" },
+    { nome: "Jorge Yo Takia Paiva", curso: "Contabilidade · 4º ano" },
     { nome: "Júlia Cursino Penteado", curso: "Economia · 1º ano" },
     { nome: "Kamila Araújo Cecílio", curso: "Contabilidade · 2º ano" },
     { nome: "Larissa de Moura Martinez", curso: "Atuária · 1º ano" },
@@ -69,10 +73,11 @@ window.LUMIAR_CONFIG = {
     { nome: "Matheus Almeida Lima", curso: "Economia · 1º ano" },
     { nome: "Matheus de Freitas Cordeiro", curso: "Contabilidade · 1º ano" },
     { nome: "Miguel Fava Santos", curso: "Economia · 1º ano" },
-    { nome: "Nubia Pereira Francisco", curso: "Contabilidade · 1º ano" },
+    { nome: "Núbia Pereira Francisco", curso: "Contabilidade · 1º ano" },
     { nome: "Olliver Anjos dos Santos Eugênio", curso: "Atuária · 1º ano" },
     { nome: "Pedro Henrique Felix Barbosa", curso: "Atuária · 1º ano" },
     { nome: "Renata Barbosa Alves", curso: "Administração · 3º ano" },
+    { nome: "Rodrigo Bento Barboza", curso: "Administração · 2º ano" },
     { nome: "Yasmim Yukie Oaira Siqueira", curso: "Administração · 2º ano" }
   ]
 };

@@ -34,6 +34,7 @@
       </button>
       <nav class="topo__nav" id="nav" aria-label="Seções">
         <a href="#manifesto">Manifesto</a>
+        <a href="#conjuntura">Conjuntura</a>
         <a href="#propostas">Propostas</a>
         <a href="#estrutura">Estrutura</a>
         <a href="#pergunte">Lumis</a>
@@ -59,6 +60,7 @@
           <div class="heroi__acoes">
             <a class="botao" href="#propostas">Ver as propostas</a>
             <a class="botao botao--contorno" href="#pergunte">Converse com a Lumis</a>
+            <a class="botao botao--contorno" data-config-href="cartaUrl" href="#" target="_blank" rel="noopener">Ler a carta programa</a>
           </div>
           <a class="heroi__insta" data-config-href="instagram" href="#" target="_blank" rel="noopener" id="heroi-insta"></a>
         </div>
@@ -118,8 +120,26 @@
       <div class="dentro">
         <p class="sobretitulo">O que a continuidade já fez</p>
         <h2>A Lumiar não começa do zero.</h2>
-        <p class="introducao">Somos continuidade das gestões que levaram essas lutas adiante. Agora é dar o próximo passo.</p>
+        <p class="introducao">Somos uma continuidade crítica de mais de dez anos, que olha para cada gestão anterior para fazer melhor. Agora é dar o próximo passo.</p>
         <div class="conquistas" id="conquistas-lista"></div>
+      </div>
+    </section>
+
+    <!-- CONJUNTURA -->
+    <section class="secao secao--creme" id="conjuntura">
+      <div class="dentro">
+        <p class="sobretitulo">Conjuntura</p>
+        <h2>O mundo, o Brasil, a USP e a FEA em 2026.</h2>
+        <p class="introducao">Como a Lumiar lê o momento em que vamos assumir o CAVC. Abra cada parte para ler.</p>
+        <div class="conjuntura">
+          <div class="conjuntura__partes" id="conjuntura-partes"></div>
+          <aside class="conjuntura__desafios">
+            <h3>Desafios para 2027</h3>
+            <ol id="conjuntura-desafios"></ol>
+            <p class="conjuntura__autocritica" id="conjuntura-autocritica"></p>
+            <a class="link-seta" id="conjuntura-link" href="#" target="_blank" rel="noopener" hidden>Ler a conjuntura completa na carta</a>
+          </aside>
+        </div>
       </div>
     </section>
 
@@ -137,7 +157,8 @@
       <div class="dentro">
         <p class="sobretitulo">Propostas</p>
         <h2>O que a Lumiar quer fazer, área por área.</h2>
-        <p class="introducao">Abra uma área para ver as propostas e abra uma proposta para ver como ela funciona. Marque com <span class="estrela-exemplo">☆</span> o que importa para você; suas marcações ficam salvas neste navegador. A carta ainda está sendo fechada.</p>
+        <p class="introducao">Abra uma área para ver as propostas e abra uma proposta para ver como ela funciona. Marque com <span class="estrela-exemplo">☆</span> o que importa para você; suas marcações ficam salvas neste navegador. Cada proposta tem um link para a página certa da carta programa.</p>
+        <p class="propostas__carta"><a class="botao" data-config-href="cartaUrl" href="#" target="_blank" rel="noopener">Abrir a carta programa completa (PDF)</a></p>
 
         <div class="filtros">
           <label class="busca">

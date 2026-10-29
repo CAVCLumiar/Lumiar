@@ -123,7 +123,7 @@
       ]);
       var detalhe = el("ul", { classe: "prop__detalhe" });
       (p.detalhe || []).forEach(function (d) { detalhe.appendChild(el("li", { texto: d })); });
-      var url = linkCarta(p.pagina);
+      var url = p.pagina ? linkCarta(p.pagina) : null;
       var pc = el("div", { classe: "prop__corpo", id: p.id + "-corpo", hidden: "" }, [
         detalhe,
         url ? el("a", { classe: "prop__carta", href: url, target: "_blank", rel: "noopener", texto: "Ler na carta (p. " + p.pagina + ") →" }) : null
@@ -281,6 +281,27 @@
   });
   org.appendChild(ramos);
 
+  /* ---------- Conjuntura ---------- */
+  var CONJ = window.LUMIAR_CONJUNTURA;
+  if (CONJ) {
+    CONJ.partes.forEach(function (parte, i) {
+      var b = el("button", { type: "button", classe: "parte__cabeca", "aria-expanded": "false", "aria-controls": "conj-" + i }, [
+        el("span", { classe: "parte__num", texto: String(i + 1) }),
+        el("span", { texto: parte.titulo })
+      ]);
+      var corpo = el("div", { classe: "parte__corpo", id: "conj-" + i, hidden: "" }, [el("p", { texto: parte.texto })]);
+      b.addEventListener("click", function () { alternar(b, corpo); });
+      $("#conjuntura-partes").appendChild(el("div", { classe: "parte" }, [b, corpo]));
+    });
+    CONJ.desafios.forEach(function (d) { $("#conjuntura-desafios").appendChild(el("li", { texto: d })); });
+    $("#conjuntura-autocritica").textContent = CONJ.autocritica;
+    if (CFG.cartaUrl) {
+      var lk = $("#conjuntura-link");
+      lk.href = CFG.cartaUrl + "#page=" + CONJ.pagina;
+      lk.hidden = false;
+    }
+  }
+
   /* ---------- O que a continuidade já fez ---------- */
   (window.LUMIAR_CONQUISTAS || []).forEach(function (c) {
     $("#conquistas-lista").appendChild(el("div", { classe: "conquista" }, [
@@ -374,8 +395,8 @@
     var nomesEst = estatutarios.map(function (m) { return m.nome; });
     var demais = CFG.chapa.filter(function (m) { return nomesEst.indexOf(m.nome) === -1; });
     $("#chapa-sub").textContent = estatutarios.length
-      ? "Também assinam o manifesto, ao todo " + CFG.chapa.length + " estudantes de Economia, Administração, Contabilidade e Atuária:"
-      : CFG.chapa.length + " estudantes de Economia, Administração, Contabilidade e Atuária assinam o manifesto.";
+      ? "Também assinam a carta programa, ao todo " + CFG.chapa.length + " estudantes de Economia, Administração, Contabilidade e Atuária:"
+      : CFG.chapa.length + " estudantes de Economia, Administração, Contabilidade e Atuária assinam a carta programa.";
     demais.forEach(function (m) { gradeChapa.appendChild(cartaoMembro(m, false)); });
   } else {
     gradeChapa.appendChild(el("div", { classe: "chapa__breve" }, [
@@ -668,6 +689,7 @@
       var pedido = Object.keys(CARGOS).filter(function (k) { return tem(todas, [k]) && (k !== "secre" || tem(todas, ["geral"])); });
       var geral = tem(todas, ["estatut", "diretor", "candidat", "cargo", "cabeca"]);
       if (!pedido.length && !geral) return null;
+      if (tem(todas, ["porque", "motivo"]) || /por que/.test(normalizar(q))) return null;
       var alvo = pedido.length && !geral
         ? est.filter(function (m) { return pedido.some(function (k) { return normalizar(m.cargo).indexOf(CARGOS[k].slice(0, 5)) === 0; }); })
         : est;
@@ -700,6 +722,31 @@
       out.push(linha([irPara("chapa", "Ver todo mundo →")]));
       return out;
     },
+    // Conjuntura
+    function (q, todas, lista) {
+      var CONJ = window.LUMIAR_CONJUNTURA;
+      if (!CONJ) return null;
+      var CHAVES = ["conjunt", "lula", "trump", "tarcis", "haddad", "icms", "venezu", "palest", "bolson", "congres",
+        "soberan", "extrema", "fapesp", "brasil", "mundo", "governo", "reitor", "desafi"];
+      if (!tem(todas, CHAVES)) return null;
+      if (tem(todas, ["desafi"]) && !tem(todas, ["lula", "trump", "tarcis"])) {
+        var ul = el("ul");
+        CONJ.desafios.forEach(function (d) { ul.appendChild(el("li", { texto: d })); });
+        return [el("p", { texto: "Os desafios que a Lumiar enxerga para 2027:" }), ul, linha([irPara("conjuntura", "Ver a conjuntura →")])];
+      }
+      var melhor = CONJ.partes.map(function (p) { return { p: p, s: pontuar(lista, p.titulo, p.texto, "") }; })
+        .sort(function (a, b) { return b.s - a.s; })[0];
+      var out = [];
+      if (melhor && melhor.s >= 2) {
+        out.push(el("p", {}, [el("strong", { texto: melhor.p.titulo + ". " }), melhor.p.texto]));
+      } else {
+        out.push(el("p", { texto: "A carta lê 2026 como um ano de ameaça imperialista no mundo, de vitória popular com a reeleição de Lula no Brasil, de cortes e falta de financiamento das universidades em São Paulo e de greve na USP, em que a FEA conquistou o reajuste anual do PAPFE." }));
+      }
+      var bts = [irPara("conjuntura", "Ver a conjuntura →")];
+      if (CFG.cartaUrl) bts.push(el("a", { href: CFG.cartaUrl + "#page=" + CONJ.pagina, target: "_blank", rel: "noopener", texto: "Ler na carta" }));
+      out.push(listaBotoes("", bts));
+      return out;
+    },
     // Manifesto
     function (q, todas) {
       if (!tem(todas, ["manifest"])) return null;
@@ -715,7 +762,7 @@
       if (!geral) return null;
       var areaPedida = Object.keys(PALAVRAS_AREA).filter(function (id) { return tem(todas, PALAVRAS_AREA[id]); });
       if (areaPedida.length) return null; // fica com a resposta por área
-      if (lista.filter(function (w) { return !/^(propost|plano|program|ideia|quais|todas|tudo|lista|principa|fazer|faz)/.test(w); }).length > 0) return null;
+      if (lista.filter(function (w) { return !/^(propost|plano|program|ideia|quais|todas|tudo|lista|principa|fazer|faz|\d+$)/.test(w); }).length > 0) return null;
       var out = [el("p", { texto: "São " + PROPOSTAS.length + " propostas em " + AREAS.length + " áreas. Clica numa área para ver:" })];
       out.push(listaBotoes("", AREAS.map(function (a) { return botaoArea(a.id, a.nome + " (" + PROPOSTAS.filter(function (p) { return p.area === a.id; }).length + ")"); })));
       return out;

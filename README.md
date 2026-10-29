@@ -17,7 +17,7 @@ assets/js/manifesto.js  manifesto e "Carta aos estudantes"  ← editar aqui
 assets/js/main.js       monta as seções, filtros, estrelas, chat e formulário
 assets/img/             logos (versões transparentes), favicons e imagem de compartilhamento
 assets/img/chapa/       fotos dos integrantes
-carta/                  PDF final da carta programa
+carta/                  carta programa final (PDF comprimido para a web)
 ```
 
 ## Seções
@@ -37,12 +37,13 @@ carta/                  PDF final da carta programa
 - **Mudar ou adicionar proposta**: edite `assets/js/conteudo.js`, lista `LUMIAR_PROPOSTAS`. Cada item tem `area`, `titulo`, `resumo` (uma linha), `detalhe` (lista de pontos), `pagina` (página da carta) e `busca` (palavras extras para o chat achar).
 - **Links da campanha** (Instagram, e-mail, WhatsApp, formulários, datas da eleição, cargos): `assets/js/config.js`. O que estiver vazio fica escondido.
 - **Manifesto em PDF**: `manifesto/manifesto-lumiar.pdf` (para trocar, substitua o arquivo mantendo o nome).
-- **Carta final**: salve como `carta/carta-programa.pdf` e preencha `cartaUrl: "carta/carta-programa.pdf"`. Confira os números de página das propostas, que hoje seguem o rascunho.
+- **Carta programa**: `carta/carta-programa-lumiar-2027.pdf` (versão comprimida, 3,4 MB). O campo `pagina` de cada proposta é a página do PDF. A seção Conjuntura está em `LUMIAR_CONJUNTURA`, no fim de `conteudo.js`.
 - **Integrantes**: fotos em `assets/img/chapa/` e a lista em `chapa` no `config.js`.
 
 ## Pendências de conteúdo
 
-- Seções da carta ainda sem texto: Conjuntura (texto incompleto), Noções de CAVC, Estatutários, Tesouraria. Finanças tem propostas montadas a partir dos outros textos da carta (revisar com a chapa).
+- A página da Secretaria de Comunicação na carta final parece cortada (só tem a primeira diretriz); o site mantém as outras diretrizes e a ouvidoria do texto enviado antes.
+- Propostas sem página na carta (vêm de textos enviados à parte): estágios (vagas com IA, Indique um Feano, troca de turno, Seção de Estágios, preparação, palestras, SempreFEA/AmeFEA, certificações) e ENECO 2028.
 - Formulário de "Quero ajudar", datas e locais da eleição.
 - Conferir a regra de quem vota no regimento eleitoral (a FAQ diz "estudantes de graduação da FEA").
 

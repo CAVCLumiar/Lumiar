@@ -475,6 +475,25 @@ p { margin: 0 0 1em; }
 }
 .org__cargo strong { font-family: var(--fonte-titulo); font-weight: 700; font-size: 1.05rem; line-height: 1.25; }
 
+/* Conjuntura */
+.conjuntura { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(20px, 3vw, 36px); margin-top: 36px; align-items: start; }
+.conjuntura__partes { display: flex; flex-direction: column; gap: 8px; }
+.conjuntura__desafios {
+  background: var(--marrom); color: var(--creme); border-radius: 24px; padding: 26px 26px 24px;
+  position: sticky; top: 96px;
+}
+.conjuntura__desafios h3 { color: var(--mostarda); font-size: 1.35rem; }
+.conjuntura__desafios ol { margin: 0 0 18px; padding-left: 22px; }
+.conjuntura__desafios li { margin-bottom: 8px; line-height: 1.45; }
+.conjuntura__desafios li::marker { color: var(--mostarda); font-weight: 700; }
+.conjuntura__autocritica { font-size: 0.92rem; opacity: 0.85; border-top: 1px solid rgba(244, 174, 50, 0.3); padding-top: 14px; }
+.conjuntura__desafios .link-seta { color: var(--mostarda); }
+@media (max-width: 860px) {
+  .conjuntura { grid-template-columns: 1fr; }
+  .conjuntura__desafios { position: static; }
+}
+.propostas__carta { text-align: center; margin: 4px 0 0; }
+
 .org__nota { margin: 18px auto 0; max-width: 60ch; font-size: 0.95rem; opacity: 0.88; }
 
 /* O que a continuidade já fez */

@@ -31,11 +31,11 @@ window.LUMIAR_AREAS = [
     intro: "As mais de vinte entidades independentes da FEA levam a formação para além da sala de aula, mas quase sempre sem apoio da administração. Já houve avanço: o registro de entidades, antes limitado a poucas semanas, agora pode ser feito o ano todo, uma conquista da greve. Ainda há muito a construir."
   },
   {
-    id: "financas", nome: "Finanças",
-    intro: "O dinheiro do CAVC é dos estudantes. A Secretaria de Finanças trabalha junto com a tesouraria para que cada real vire projeto, permanência e uma Vivência funcionando, com contas abertas para todo mundo ver."
+    id: "financas", nome: "Tesouraria e finanças",
+    intro: "A meta para 2027 é deixar um legado: um CAVC com as contas equilibradas e receitas mais estáveis, para que as próximas gestões comecem o ano com mais tranquilidade. A Tesouraria cuida das cinco contas bancárias e da folha de pagamento e trabalha com três frentes: Captação de Recursos e Parcerias, CAVC Idiomas e Vivência."
   },
   {
-    id: "apsm", nome: "Apoio, permanência e saúde mental",
+    id: "apsm", nome: "Acesso, permanência e saúde mental",
     intro: "A FEA tem que caber na vida de quem estuda aqui: acesso, diversidade, auxílios, moradia e cuidado com a saúde mental. E aqui muita gente se sustenta com a bolsa do estágio, mesmo recebendo PAPFE: estágio não substitui política de permanência, mas colocar mais feanos no mercado alivia a vulnerabilidade financeira de muitos."
   },
   {
@@ -82,7 +82,7 @@ window.LUMIAR_DESTAQUES = [
 window.LUMIAR_PROPOSTAS = [
   /* ---------------- ESPAÇOS E VIVÊNCIA ---------------- */
   {
-    area: "espacos", pagina: 2, titulo: "Ouvir antes de mexer",
+    area: "espacos", pagina: 37, titulo: "Ouvir antes de mexer",
     resumo: "Mapear com os estudantes o que falta em cada espaço da FEA.",
     detalhe: [
       "Levantar as demandas concretas do dia a dia: disposição dos móveis, condições dos ambientes e o que acontece em cada lugar.",
@@ -92,7 +92,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "infraestrutura espaco sala predio reforma"
   },
   {
-    area: "espacos", pagina: 2, titulo: "Salas para as entidades",
+    area: "espacos", pagina: 37, titulo: "Salas para as entidades",
     resumo: "Lutar por espaço próprio para as entidades estudantis.",
     detalhe: [
       "Hoje faltam salas para reuniões, para guardar materiais e para tocar projetos.",
@@ -102,7 +102,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "entidade sala espaco reuniao cta"
   },
   {
-    area: "espacos", pagina: 2, titulo: "Novão mais usável",
+    area: "espacos", pagina: 38, titulo: "Novão mais usável",
     resumo: "Mesas, cadeiras e guarda-sóis para usar o Novão de verdade.",
     detalhe: [
       "Seguir investindo em mobiliário para estudar, comer e conversar na área.",
@@ -111,7 +111,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "novao mesa cadeira guarda-sol"
   },
   {
-    area: "espacos", pagina: 2, titulo: "Vivência bem cuidada",
+    area: "espacos", pagina: 38, titulo: "Vivência bem cuidada",
     resumo: "A lanchonete do CAVC funcionando bem e cheia de gente.",
     detalhe: [
       "A Vivência Estudantil Norberto Nehring é gerida pelo CAVC e é o principal ponto de convivência da FEA.",
@@ -121,7 +121,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "vivencia lanchonete cantina comida cafe"
   },
   {
-    area: "espacos", pagina: 2, titulo: "Convivência que dura",
+    area: "espacos", pagina: 40, titulo: "Convivência que dura",
     resumo: "Trocar o papelão por móveis de convivência duradouros.",
     detalhe: [
       "A intervenção do Semead com móveis de papelão mostrou que o espaço enche quando acolhe: mais gente lendo, conversando e descansando.",
@@ -133,7 +133,7 @@ window.LUMIAR_PROPOSTAS = [
 
   /* ---------------- ACOLHIMENTO ---------------- */
   {
-    area: "acolhimento", pagina: 3, titulo: "Bar das Calouras",
+    area: "acolhimento", pagina: 43, titulo: "Bar das Calouras",
     resumo: "Encontro de veteranas e calouras antes da semana de recepção.",
     detalhe: [
       "Acontece na semana anterior à recepção e é exclusivo para calouras.",
@@ -142,7 +142,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "calouro caloura bixete mulher veterana recepcao"
   },
   {
-    area: "acolhimento", pagina: 4, titulo: "Apadrinhamento",
+    area: "acolhimento", pagina: 43, titulo: "Apadrinhamento",
     resumo: "Cada bixo com uma pessoa veterana que acompanha a graduação toda.",
     detalhe: [
       "Veteranes se inscrevem e adotam um ou mais bixos por meio de um match.",
@@ -152,7 +152,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "padrinho madrinha afilhado bixo calouro veterano match"
   },
   {
-    area: "acolhimento", pagina: 4, titulo: "USP Safari",
+    area: "acolhimento", pagina: 43, titulo: "USP Safari",
     resumo: "Tour pelo campus com concurso de melhor foto.",
     detalhe: [
       "Um passeio leve pelos lugares históricos da Cidade Universitária durante a recepção.",
@@ -161,7 +161,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "tour campus calouro bixo foto passeio"
   },
   {
-    area: "acolhimento", pagina: 4, titulo: "Guia do Calouro",
+    area: "acolhimento", pagina: 43, titulo: "Guia do Calouro",
     resumo: "As respostas que ninguém te dá no primeiro dia, num só lugar.",
     detalhe: [
       "Qual ônibus leva até a FEA, onde fica o bandejão mais próximo, como chegar à CPTM, o que são as entidades e o que é o CEPE.",
@@ -170,7 +170,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "calouro bixo onibus circular bandejao cptm trem cepe duvida guia transporte"
   },
   {
-    area: "acolhimento", pagina: 14, titulo: "Cartilha de Permanência",
+    area: "acolhimento", pagina: 92, titulo: "Cartilha de Permanência",
     resumo: "Permanência acadêmica, social e financeira explicada num documento.",
     detalhe: [
       "Feita pela APSM com O Visconde e distribuída a partir da semana de recepção.",
@@ -179,19 +179,19 @@ window.LUMIAR_PROPOSTAS = [
     busca: "permanencia auxilio bolsa cartilha"
   },
   {
-    area: "acolhimento", pagina: 14, titulo: "Corredor das entidades",
+    area: "acolhimento", pagina: 92, titulo: "Corredor das entidades",
     resumo: "Apresentar o CAVC e ajudar a organizar o corredor na recepção.",
     detalhe: ["O CAVC participa do corredor das entidades e apoia a organização quando for preciso."],
     busca: "entidade calouro recepcao corredor"
   },
   {
-    area: "acolhimento", pagina: 10, titulo: "Aula Magna",
+    area: "acolhimento", pagina: 84, titulo: "Aula Magna",
     resumo: "A primeira aula do ano com uma referência da área.",
     detalhe: ["Abrir o primeiro semestre dos calouros com uma aula especial sobre temas que a grade não cobre e sobre o futuro das áreas da FEA."],
     busca: "aula magna palestra calouro"
   },
   {
-    area: "acolhimento", pagina: 11, titulo: "Aulas Trote",
+    area: "acolhimento", pagina: 84, titulo: "Aulas Trote",
     resumo: "Aulas \"de brincadeira\" dadas por alunos, para quem não curte festa.",
     detalhe: [
       "Nem todo mundo quer se integrar em festa.",
@@ -202,7 +202,7 @@ window.LUMIAR_PROPOSTAS = [
 
   /* ---------------- ACADÊMICA ---------------- */
   {
-    area: "academica", pagina: 7, titulo: "Nivelamento Matemático",
+    area: "academica", pagina: 75, titulo: "Nivelamento Matemático",
     resumo: "Já teve mais de 100 inscritos. Agora é continuar e ampliar.",
     detalhe: [
       "Projeto criado por Camilly Nobre e Esther Barletta, hoje candidatas a presidente e secretária-geral pela Lumiar. A primeira edição teve mais de 100 inscritos.",
@@ -213,7 +213,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "matematica calculo estatistica probabilidade exatas base nivelamento camilly camy esther inscritos"
   },
   {
-    area: "academica", pagina: 7, titulo: "Aulões antes das provas",
+    area: "academica", pagina: 76, titulo: "Aulões antes das provas",
     resumo: "Aulões em todos os cursos, pedidos pela própria turma.",
     detalhe: [
       "Os representantes de classe (RCs) levantam a demanda de cada turma.",
@@ -223,7 +223,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "aulao prova estudar duvida monitoria revisao"
   },
   {
-    area: "academica", pagina: 7, titulo: "Grupos de estudo",
+    area: "academica", pagina: 77, titulo: "Grupos de estudo",
     resumo: "Grupos sobre o que a graduação não aprofunda, inclusive os que você propuser.",
     detalhe: [
       "O CAVC cria grupos sobre temas pouco abordados nos cursos.",
@@ -233,7 +233,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "grupo estudo tema"
   },
   {
-    area: "academica", pagina: 8, titulo: "Banco de materiais",
+    area: "academica", pagina: 77, titulo: "Banco de materiais",
     resumo: "Provas antigas, resumos e livros da bibliografia num só lugar.",
     detalhe: [
       "Reorganizar as pastas do banco que já existe.",
@@ -244,7 +244,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "material prova antiga resumo livro pdf drive apostila bibliografia"
   },
   {
-    area: "academica", pagina: 8, titulo: "CAVCEBO",
+    area: "academica", pagina: 78, titulo: "CAVCEBO",
     resumo: "O sebo de livros dos estudantes, maior e mais divulgado.",
     detalhe: [
       "Livros técnicos e de lazer, mantidos pelo CAVC.",
@@ -253,7 +253,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "sebo livro cavcebo"
   },
   {
-    area: "academica", pagina: 8, titulo: "Cursos de Excel e Power BI",
+    area: "academica", pagina: 78, titulo: "Cursos de Excel e Power BI",
     resumo: "Capacitações gratuitas, com aulas gravadas para rever depois.",
     detalhe: [
       "Primeiro para a gestão do CAVC, depois abertas a todos os alunos da FEA.",
@@ -262,7 +262,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "excel power bi curso capacitacao ferramenta planilha"
   },
   {
-    area: "academica", pagina: 8, titulo: "Revista de Iniciação Científica",
+    area: "academica", pagina: 79, titulo: "Revista de Iniciação Científica",
     resumo: "Pesquisas de graduação e pós da FEA publicadas e explicadas.",
     detalhe: [
       "Projetos, artigos e resenhas de alunos de graduação e pós, inclusive pesquisas feitas em entidades.",
@@ -272,7 +272,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "pesquisa ic iniciacao cientifica revista artigo"
   },
   {
-    area: "academica", pagina: 9, titulo: "Estágios",
+    area: "academica", pagina: 80, titulo: "Estágios",
     resumo: "Ajuda com a burocracia de estágio e vagas dentro da própria USP.",
     detalhe: [
       "Diretoria acessível para tirar dúvidas sobre as etapas junto à Secretaria de Estágios da FEA.",
@@ -282,7 +282,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "estagio vaga emprego trabalho secretaria contrato"
   },
   {
-    area: "academica", pagina: 9, titulo: "Pesquisa de desempenho",
+    area: "academica", pagina: 81, titulo: "Pesquisa de desempenho",
     resumo: "Formulário anônimo sobre as matérias mais difíceis, para avisar quem vem.",
     detalhe: [
       "No fim de cada semestre, um formulário levanta as disciplinas com mais reprovação e dificuldade.",
@@ -291,7 +291,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "reprovacao disciplina materia dificil dp"
   },
   {
-    area: "academica", pagina: 9, titulo: "RCs mais perto",
+    area: "academica", pagina: 81, titulo: "RCs mais perto",
     resumo: "No mínimo duas reuniões por ano com todos os representantes de classe.",
     detalhe: [
       "Os RCs são a ponte entre cada turma e o CAVC.",
@@ -300,7 +300,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "rc representante classe turma"
   },
   {
-    area: "academica", pagina: 8, titulo: "Acadêmica para quem é menos ouvido",
+    area: "academica", pagina: 79, titulo: "Acadêmica para quem é menos ouvido",
     resumo: "Aproximar a área de mulheres, pessoas LGBTQIA+ e pessoas negras.",
     detalhe: [
       "Tornar a Área Acadêmica uma referência conhecida para quem enfrenta dificuldades.",
@@ -309,7 +309,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "mulher lgbt negro pardo representatividade apoio"
   },
   {
-    area: "academica", pagina: 9, titulo: "Grades mais plurais",
+    area: "academica", pagina: 82, titulo: "Grades mais plurais",
     resumo: "Ouvir os alunos sobre as grades e levar propostas às Comissões Coordenadoras.",
     detalhe: [
       "Economia: mais Humanidades e Macroeconomia, e eletivas mais diversas.",
@@ -320,7 +320,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "grade curricular curriculo economia administracao contabilidade atuaria eletiva disciplina"
   },
   {
-    area: "academica", pagina: 10, titulo: "Intercâmbio e inglês",
+    area: "academica", pagina: 83, titulo: "Intercâmbio e inglês",
     resumo: "Editais da CCInt divulgados, apoio no inglês e regras menos restritivas.",
     detalhe: [
       "Contato contínuo com a CCInt para divulgar editais, prazos e bolsas.",
@@ -330,7 +330,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "intercambio ingles idioma ccint bolsa exterior"
   },
   {
-    area: "academica", pagina: 10, titulo: "Qualquer atestado vale",
+    area: "academica", pagina: 83, titulo: "Qualquer atestado vale",
     resumo: "Atestado de qualquer instituição garantindo abono e prova substitutiva.",
     detalhe: [
       "Hoje o regulamento garante abono e substitutiva com atestado do Hospital Universitário.",
@@ -340,7 +340,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "atestado falta prova substitutiva hu doente medico abono"
   },
   {
-    area: "academica", pagina: 11, titulo: "Festival Paul Singer",
+    area: "academica", pagina: 85, titulo: "Festival Paul Singer",
     resumo: "A semana acadêmica sobre o que as grades deixam de lado, de novo.",
     detalhe: [
       "Palestras, workshops, feiras e oficinas.",
@@ -350,16 +350,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "semana academica festival paul singer heterodoxia humanidades"
   },
   {
-    area: "academica", pagina: 10, titulo: "Mostra de IC e TCC",
-    resumo: "Alunos apresentando suas pesquisas, com premiação.",
-    detalhe: [
-      "Eventos em que alunos apresentam ICs e TCCs para colegas e professores da área.",
-      "Professores comentam e premiam as melhores iniciações científicas."
-    ],
-    busca: "tcc ic apresentacao pesquisa premio"
-  },
-  {
-    area: "academica", pagina: 11, titulo: "CorreLab",
+    area: "academica", pagina: 85, titulo: "CorreLab",
     resumo: "Os laboratórios de pesquisa da FEA em estandes no saguão.",
     detalhe: [
       "Conversar com membros e docentes de cada laboratório e tirar dúvidas.",
@@ -368,7 +359,17 @@ window.LUMIAR_PROPOSTAS = [
     busca: "laboratorio pesquisa ic correlab"
   },
   {
-    area: "academica", pagina: 11, titulo: "Palestras ao longo do ano",
+    area: "academica", pagina: 33, titulo: "A USP inteira ao alcance da FEA",
+    resumo: "Cursos, eventos e grupos de estudo com estudantes de outras unidades.",
+    detalhe: [
+      "Grupos de estudo interunidades e eventos plurais para trocar experiências com outras áreas da USP.",
+      "Fortalecer a pesquisa com a pós-graduação e núcleos da FEA como o MADE e o NEREUS.",
+      "Ampliar a participação estudantil na Comissão de Cultura e Extensão."
+    ],
+    busca: "interunidades interdisciplinar usp outras unidades made nereus pos-graduacao extensao comissao cultura tripe"
+  },
+  {
+    area: "academica", pagina: 86, titulo: "Palestras ao longo do ano",
     resumo: "Grades, temas pouco abordados e intercâmbio em debate.",
     detalhe: ["Feitas com outras áreas do CAVC, para uma formação mais crítica e plural."],
     busca: "palestra debate"
@@ -446,7 +447,7 @@ window.LUMIAR_PROPOSTAS = [
 
   /* ---------------- REPRESENTAÇÃO DISCENTE ---------------- */
   {
-    area: "rd", titulo: "Você opina antes do voto",
+    area: "rd", pagina: 68, titulo: "Você opina antes do voto",
     resumo: "Consultas abertas aos alunos antes de levar uma pauta aos colegiados.",
     detalhe: [
       "As pautas nascem do contato regular entre a Secretaria de RD e os estudantes, por formulários e consultas abertas nos canais oficiais.",
@@ -456,7 +457,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "consulta formulario opiniao voto colegiado congregacao"
   },
   {
-    area: "rd", titulo: "Colegiados às claras",
+    area: "rd", pagina: 68, titulo: "Colegiados às claras",
     resumo: "Pautas, decisões e datas das reuniões divulgadas para todo mundo.",
     detalhe: [
       "Divulgar os canais de comunicação, as pautas em discussão, as decisões tomadas e o calendário das reuniões.",
@@ -465,7 +466,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "transparencia colegiado reuniao decisao pauta"
   },
   {
-    area: "rd", titulo: "Grade de Economia com história",
+    area: "rd", pagina: 68, titulo: "Grade de Economia com história",
     resumo: "Seguir o debate da reforma de 2021 e acompanhar as reformas dos outros cursos.",
     detalhe: [
       "A reforma da grade de Economia de 2021 foi feita sem participação significativa dos estudantes.",
@@ -475,7 +476,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "grade curricular reforma economia historia horas"
   },
   {
-    area: "rd", titulo: "Espaços de convivência no CTA",
+    area: "rd", pagina: 70, titulo: "Espaços de convivência no CTA",
     resumo: "Levar ao Conselho Técnico-Administrativo a falta de lugar para conviver.",
     detalhe: [
       "Até poucos anos atrás não havia mesas e cadeiras adequadas no prédio principal.",
@@ -484,7 +485,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "cta espaco convivencia mesa cadeira orcamento"
   },
   {
-    area: "rd", titulo: "Entidades valendo crédito",
+    area: "rd", pagina: 70, titulo: "Entidades valendo crédito",
     resumo: "Atividades das entidades reconhecidas como AAC e AEX.",
     detalhe: [
       "Reconhecimento oficial das entidades estudantis pelos departamentos.",
@@ -493,7 +494,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "entidade credito aac aex extensao complementar"
   },
   {
-    area: "rd", titulo: "Quem trabalha também conta",
+    area: "rd", pagina: 71, titulo: "Quem trabalha também conta",
     resumo: "Apoio a quem estagia ou trabalha durante a graduação.",
     detalhe: [
       "Com a Secretaria de Estágios, apoio burocrático, orientação e acesso a novas oportunidades.",
@@ -502,7 +503,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "trabalha estagio emprego noturno"
   },
   {
-    area: "rd", titulo: "RDs jogando junto",
+    area: "rd", pagina: 71, titulo: "RDs jogando junto",
     resumo: "Representantes de todos os colegiados com estratégia comum.",
     detalhe: ["A Secretaria mobiliza os representantes discentes de todos os colegiados, com estratégias comuns e ampla divulgação para os estudantes."],
     busca: "representante discente colegiado"
@@ -510,7 +511,7 @@ window.LUMIAR_PROPOSTAS = [
 
   /* ---------------- ENTIDADES ---------------- */
   {
-    area: "entidades", titulo: "Entidades mais fortes juntas",
+    area: "entidades", pagina: 62, titulo: "Entidades mais fortes juntas",
     resumo: "Mais comunicação entre as entidades para negociar com a diretoria da FEA.",
     detalhe: [
       "Hoje as entidades enfrentam restrições a atividades e eventos e não têm canal aberto de diálogo com a administração.",
@@ -519,7 +520,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "entidade entidades diretoria dialogo articulacao restricao evento"
   },
   {
-    area: "entidades", titulo: "AEX pelas entidades",
+    area: "entidades", pagina: 62, titulo: "AEX pelas entidades",
     resumo: "Projetos das entidades valendo crédito de extensão, além de Empreendedorismo e Inovação.",
     detalhe: [
       "Hoje a disciplina obrigatória de Empreendedorismo e Inovação é praticamente a única fonte de créditos AEX em larga escala, com desgaste de alunos e professores.",
@@ -529,7 +530,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "aex extensao credito curricularizacao empreendedorismo inovacao entidade"
   },
   {
-    area: "entidades", titulo: "Professores conhecendo as entidades",
+    area: "entidades", pagina: 63, titulo: "Professores conhecendo as entidades",
     resumo: "Apresentar as entidades aos docentes e abrir caminho para parcerias.",
     detalhe: [
       "Para um projeto virar extensão, precisa de um docente responsável, e a maior parte dos professores não sabe quais são as entidades nem o que elas fazem.",
@@ -538,7 +539,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "professor docente parceria pesquisa entidade extensao"
   },
   {
-    area: "entidades", titulo: "Conselho de Entidades mais dinâmico",
+    area: "entidades", pagina: 64, titulo: "Conselho de Entidades mais dinâmico",
     resumo: "Reuniões só com pautas importantes e saindo com encaminhamentos concretos.",
     detalhe: [
       "O Conselho é o espaço para construir a aliança entre CAVC e entidades, e das entidades entre si.",
@@ -548,7 +549,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "conselho entidades reuniao pauta representante"
   },
   {
-    area: "entidades", titulo: "Entidades menos dependentes do CAVC",
+    area: "entidades", pagina: 64, titulo: "Entidades menos dependentes do CAVC",
     resumo: "Autonomia na reserva de espaços e espaço garantido no plano diretor.",
     detalhe: [
       "Defender que as entidades possam reservar espaços sem depender do CAVC.",
@@ -557,57 +558,108 @@ window.LUMIAR_PROPOSTAS = [
     busca: "espaco sala reserva plano diretor autonomia entidade"
   },
 
-  /* ---------------- FINANÇAS ---------------- */
+  /* ---------------- TESOURARIA E FINANÇAS ---------------- */
   {
-    area: "financas", titulo: "Contas abertas",
-    resumo: "Quanto entra e quanto sai do CAVC, divulgado para os estudantes.",
+    area: "financas", pagina: 47, titulo: "Planejamento estratégico anual",
+    resumo: "Orçamento previsto para cada área, definido no início da gestão e revisado a cada trimestre.",
     detalhe: [
-      "Publicar com frequência as receitas e os gastos: Vivência, eventos, projetos e parcerias.",
-      "É o mesmo princípio de transparência que a Lumiar defende nos colegiados: o estudante tem direito de saber o que acontece."
+      "Os objetivos e as prioridades financeiras do ano são definidos no congresso de início de gestão.",
+      "Cada área tem um orçamento previsto, acompanhado nas Reuniões Gerais e revisado a cada trimestre."
     ],
-    busca: "contas transparencia prestacao balanco receita gasto dinheiro financas caixa"
+    busca: "orcamento planejamento verba area tesouraria trimestre financas"
   },
   {
-    area: "financas", titulo: "Orçamento planejado com as áreas",
-    resumo: "Cada área sabe no começo do ano com quanto pode contar.",
-    detalhe: [
-      "Montar o orçamento do ano com as secretarias e áreas, com prioridade para permanência e projetos que chegam aos estudantes.",
-      "Trabalho conjunto da Secretaria de Finanças com as co-tesoureiras."
-    ],
-    busca: "orcamento planejamento verba area secretaria tesouraria financas"
+    area: "financas", pagina: 47, titulo: "Um caminho único para os pedidos das áreas",
+    resumo: "Pedidos de recursos com o mesmo fluxo, prazos e critérios conhecidos por todos.",
+    detalhe: ["Cada área sabe quando e como será atendida, e os projetos saem do papel no tempo certo."],
+    busca: "pedido recurso fluxo prazo criterio area tesouraria"
   },
   {
-    area: "financas", titulo: "Vivência bem administrada",
-    resumo: "Administrar bem a lanchonete do CAVC para ela seguir acessível.",
+    area: "financas", pagina: 57, titulo: "Contas organizadas e balanços trimestrais",
+    resumo: "Relatórios financeiros periódicos e processos registrados, não só na memória de poucas pessoas.",
     detalhe: [
-      "A Vivência é gerida pelo CAVC e faz parte do patrimônio estudantil.",
-      "Cuidar das contas, da manutenção e dos preços para que ela continue acessível aos estudantes e sustentável para a entidade."
+      "A gestão Horizonte centralizou as funções financeiras do CAVC; a Lumiar quer consolidar esse processo.",
+      "Relatórios periódicos sobre a situação financeira, que servem de base para os balanços trimestrais.",
+      "Registrar informações, decisões e procedimentos para facilitar a transição entre gestões."
     ],
-    busca: "vivencia lanchonete preco contas financas patrimonio"
+    busca: "contas transparencia balanco relatorio trimestral prestacao processos transicao dinheiro caixa financas"
   },
   {
-    area: "financas", titulo: "Festa que financia permanência",
-    resumo: "O que os eventos arrecadam volta em projetos e em acesso.",
+    area: "financas", pagina: 57, titulo: "Captação de recursos e parcerias",
+    resumo: "Um braço operacional da Tesouraria para buscar parcerias e patrocínios.",
     detalhe: [
-      "Os eventos ajudam a sustentar o CAVC e a garantir os lotes sociais e trans e a gratuidade para quem mora no CRUSP.",
-      "A FEA Junina também ajuda entidades e times a arrecadar.",
-      "No HH beneficente, parte do lucro vai para uma casa de acolhimento LGBTQIAPN+."
+      "Amplia o que o CAVC consegue oferecer aos estudantes.",
+      "Também acompanha os espaços e o patrimônio do CAVC, com contratos, parcerias e demandas de manutenção."
     ],
-    busca: "festa evento lucro arrecadacao lote social financas dinheiro contas gastam gasto"
+    busca: "captacao parceria patrocinio patrimonio contrato manutencao verba recurso"
   },
   {
-    area: "financas", titulo: "Verba de editais e parceiros",
-    resumo: "Buscar recursos fora do caixa do CAVC para tirar projetos do papel.",
+    area: "financas", pagina: 58, titulo: "Vivência bem administrada",
+    resumo: "Controle de receitas e despesas, contratos em dia e manutenção planejada.",
     detalhe: [
-      "Editais do SempreFEA, como o pedido de verba para os absorventes nos banheiros.",
-      "Parcerias com institutos e agências da USP (CAVCEBO), com ONGs (Apoio Psicossocial) e com organizações como SempreFEA e AmeFEA."
+      "A Vivência é responsabilidade direta do CAVC e uma fonte de receita importante para a entidade.",
+      "Controle atualizado de receitas e despesas e acompanhamento dos contratos de aluguel e das parcerias.",
+      "Novas parcerias que tragam arrecadação e também benefícios para a comunidade feana.",
+      "Manutenção e melhorias planejadas conforme as necessidades do espaço."
     ],
-    busca: "edital parceria semprefea amefea verba patrocinio recurso financas"
+    busca: "vivencia lanchonete contas contrato aluguel manutencao parceria financas"
+  },
+  {
+    area: "financas", pagina: 58, titulo: "Cuidado com quem trabalha na Vivência",
+    resumo: "Contato próximo com os funcionários e condições adequadas de trabalho.",
+    detalhe: ["Acompanhar as demandas do trabalho de quem faz a Vivência funcionar todos os dias."],
+    busca: "funcionario trabalhador vivencia condicoes trabalho"
+  },
+  {
+    area: "financas", pagina: 48, titulo: "CAVC Idiomas com mais bolsistas",
+    resumo: "Mais de 800 estudantes já estudaram com bolsa desde 2021. A meta é ampliar.",
+    detalhe: [
+      "Fundado em 1989, o CAVC Idiomas hoje tem a função de democratizar o ensino de idiomas e contribuir para a permanência.",
+      "Em todas as decisões sobre a escola, o objetivo é aumentar o número de bolsistas.",
+      "Empresas financiando bolsas num modelo de patrocínio em \"degraus\" de valor."
+    ],
+    busca: "idiomas cavc idiomas bolsa bolsista ingles curso lingua patrocinio desconto"
+  },
+  {
+    area: "financas", pagina: 49, titulo: "Novos cursos no Idiomas",
+    resumo: "Excel, Power BI, inglês para proficiência e Libras, conforme a procura.",
+    detalhe: [
+      "A partir de pesquisa com os estudantes, avaliar cursos ligados à realidade da FEA.",
+      "Cada curso abre quando houver demanda para formar turma.",
+      "Turmas online e presenciais, com horários definidos pela procura."
+    ],
+    busca: "idiomas curso excel power bi libras proficiencia online presencial horario"
+  },
+  {
+    area: "financas", pagina: 50, titulo: "Idiomas para o intercâmbio",
+    resumo: "Bolsas e descontos para quem precisa comprovar proficiência.",
+    detalhe: ["Junto com a Área Acadêmica, para estudantes da FEA que vão participar de programas de intercâmbio."],
+    busca: "intercambio proficiencia idioma ingles bolsa desconto toefl ielts"
+  },
+  {
+    area: "financas", pagina: 50, titulo: "Idiomas decidido em conjunto",
+    resumo: "Reuniões mensais entre a gestão do CAVC e a equipe da escola.",
+    detalhe: [
+      "Secretaria, financeiro, administrativo, coordenação e professores participam das decisões.",
+      "Um encontro de planejamento no início de cada semestre, antes das matrículas.",
+      "Processos e metas registrados para uma transição cuidadosa para a próxima gestão."
+    ],
+    busca: "idiomas funcionarios professores reuniao decisao gestao"
+  },
+  {
+    area: "financas", pagina: 50, titulo: "Idiomas aberto para fora da USP",
+    resumo: "Parcerias comissionadas e com empresas e comunidades de fora da universidade.",
+    detalhe: [
+      "Parceiros recebem comissão por matrícula, o que amplia a divulgação da escola.",
+      "Mais parcerias com empresas, instituições e comunidades externas para aumentar a base de alunos.",
+      "Divulgação que mostre o papel social da escola e sua ligação com o Centro Acadêmico."
+    ],
+    busca: "idiomas parceria comissao externo empresa divulgacao"
   },
 
   /* ---------------- APSM ---------------- */
   {
-    area: "apsm", pagina: 12, titulo: "Prédios acessíveis",
+    area: "apsm", pagina: 88, titulo: "Prédios acessíveis",
     resumo: "Rampas, piso tátil, elevadores acessíveis e climatização.",
     detalhe: [
       "Mapear os lugares que precisam de atenção e levar projetos aos Representantes Discentes.",
@@ -616,7 +668,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "acessibilidade rampa elevador pcd deficiencia calor ar"
   },
   {
-    area: "apsm", pagina: 12, titulo: "Absorventes nos banheiros",
+    area: "apsm", pagina: 88, titulo: "Absorventes nos banheiros",
     resumo: "Absorventes gratuitos nos banheiros femininos da FEA.",
     detalhe: [
       "Propor à diretoria que a faculdade disponibilize absorventes.",
@@ -625,17 +677,18 @@ window.LUMIAR_PROPOSTAS = [
     busca: "absorvente banheiro dignidade menstrual"
   },
   {
-    area: "apsm", pagina: 12, titulo: "Mais diversidade na FEA",
+    area: "apsm", pagina: 88, titulo: "Mais diversidade na FEA",
     resumo: "Cotas para pessoas trans e PCD, vestibular indígena e cotas na docência.",
     detalhe: [
       "Somar às pautas de cotas para pessoas com deficiência e pessoas trans, vestibular indígena e cotas em concursos docentes e na pós.",
+      "As cotas PCD devem ser implementadas até 2027, e a FEA precisa estar preparada para receber esses estudantes.",
       "Debates em assembleias, palestras e intervenções culturais e artísticas.",
       "Rodas de conversa entre alunes e professores que entraram por ações afirmativas e membros de entidades de grupos minoritários."
     ],
     busca: "cota trans pcd indigena vestibular diversidade negro acao afirmativa"
   },
   {
-    area: "apsm", pagina: 12, titulo: "Intercâmbio para todos",
+    area: "apsm", pagina: 89, titulo: "Intercâmbio para todos",
     resumo: "Horizonte Sem Fronteiras orientado e intercâmbio para quem está em vulnerabilidade.",
     detalhe: [
       "Informações, editais e ajuda com os procedimentos do Horizonte Sem Fronteiras.",
@@ -645,19 +698,19 @@ window.LUMIAR_PROPOSTAS = [
     busca: "intercambio horizonte sem fronteiras vulnerabilidade intercambista"
   },
   {
-    area: "apsm", pagina: 12, titulo: "Acolher quem entra depois",
+    area: "apsm", pagina: 89, titulo: "Acolher quem entra depois",
     resumo: "Atenção a quem chega fora da semana de recepção.",
     detalhe: ["Receber e explicar como as coisas funcionam para que quem entra depois também tenha uma boa experiência."],
     busca: "ingressante depois transferencia chamada"
   },
   {
-    area: "apsm", pagina: 13, titulo: "Canal de bolsas no WhatsApp",
+    area: "apsm", pagina: 90, titulo: "Canal de bolsas no WhatsApp",
     resumo: "Estágios, PUB, PIBIC e ICs num canal só.",
     detalhe: ["Um canal no WhatsApp com editais de bolsas e vagas abertas aos feanos."],
     busca: "bolsa pub pibic whatsapp edital canal"
   },
   {
-    area: "apsm", pagina: 13, titulo: "Auxílios explicados",
+    area: "apsm", pagina: 90, titulo: "Auxílios explicados",
     resumo: "PAPFE, CRUSP, USP Diversa e outros apoios divulgados de verdade.",
     detalhe: [
       "Programas da USP: PAPFE, Moradia Estudantil (CRUSP), USP Diversa e Auxílio Alimentação.",
@@ -666,7 +719,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "papfe auxilio permanencia bilhete unico alimentacao dinheiro provao paulista usp diversa"
   },
   {
-    area: "apsm", pagina: 13, titulo: "CRUSP perto do CAVC",
+    area: "apsm", pagina: 90, titulo: "CRUSP perto do CAVC",
     resumo: "Grupo com os cruspianos da FEA e luta por mais vagas e PAPFE.",
     detalhe: [
       "Grupo de WhatsApp com os moradores do CRUSP que estudam na FEA.",
@@ -676,19 +729,19 @@ window.LUMIAR_PROPOSTAS = [
     busca: "crusp moradia cruspiano amorcrusp prip"
   },
   {
-    area: "apsm", pagina: 13, titulo: "Coletivos fortes",
+    area: "apsm", pagina: 90, titulo: "Coletivos fortes",
     resumo: "Apoiar os coletivos ativos e ajudar a reativar os parados.",
     detalhe: ["A FEA ainda é majoritariamente composta por homens brancos. Os coletivos são essenciais para mudar isso."],
     busca: "coletivo negro feminista lgbt"
   },
   {
-    area: "apsm", pagina: 13, titulo: "Disque-denúncia",
+    area: "apsm", pagina: 91, titulo: "Disque-denúncia",
     resumo: "Canal para denunciar preconceito ou injúria, mais divulgado.",
     detalhe: ["Com a permissão da vítima, as denúncias são levadas à Ouvidoria da FEA."],
     busca: "denuncia preconceito racismo assedio ouvidoria injuria"
   },
   {
-    area: "apsm", pagina: 13, titulo: "Eventos temáticos",
+    area: "apsm", pagina: 91, titulo: "Eventos temáticos",
     resumo: "Cine debates, Girls Day, oficinas e atividades na Meia-Lua.",
     detalhe: [
       "Eventos interativos em datas como o Dia da Consciência Negra, o Dia das Mulheres e o Mês do Orgulho.",
@@ -698,7 +751,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "cine debate girls day consciencia negra orgulho mulheres meia-lua oficina"
   },
   {
-    area: "apsm", pagina: 14, titulo: "Saúde mental em pauta",
+    area: "apsm", pagina: 93, titulo: "Saúde mental em pauta",
     resumo: "Palestras e divulgação de atendimento gratuito ou com desconto.",
     detalhe: [
       "Palestras para tirar dúvidas, entender condições psicológicas e promover autoconhecimento.",
@@ -708,7 +761,16 @@ window.LUMIAR_PROPOSTAS = [
     busca: "saude mental psicologo psiquiatra terapia ansiedade depressao cip"
   },
   {
-    area: "apsm", pagina: 14, titulo: "Apoio Psicossocial maior",
+    area: "apsm", pagina: 36, titulo: "RD na Comissão de Inclusão e Pertencimento",
+    resumo: "Pelo menos uma vaga de representante discente na CIP.",
+    detalhe: [
+      "Aproximar a pauta da saúde mental da esfera institucional da FEA.",
+      "Os casos de burnout, ansiedade e depressão aumentam a cada ano, muitas vezes agravados pela carga horária e por outros trabalhos."
+    ],
+    busca: "cip comissao inclusao pertencimento representante saude mental burnout"
+  },
+  {
+    area: "apsm", pagina: 93, titulo: "Apoio Psicossocial maior",
     resumo: "Mais estudantes de baixa renda com atendimento psicológico.",
     detalhe: [
       "Estruturar melhor o projeto e divulgar mais.",
@@ -717,7 +779,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "psicologo terapia baixa renda apoio psicossocial"
   },
   {
-    area: "apsm", pagina: 14, titulo: "Cão-terapia",
+    area: "apsm", pagina: 93, titulo: "Cão-terapia",
     resumo: "Cachorros na FEA para desestressar na época de provas.",
     detalhe: ["Com o PET FEA e a ONG Cão Carinho, com arrecadação de alimentos não perecíveis."],
     busca: "cachorro cao pet prova estresse"
@@ -725,7 +787,7 @@ window.LUMIAR_PROPOSTAS = [
 
   /* ---------------- EVENTOS ---------------- */
   {
-    area: "eventos", pagina: 15, titulo: "Lote social e trans",
+    area: "eventos", pagina: 105, titulo: "Lote social e trans",
     resumo: "Festas acessíveis, com gratuidade para quem mora no CRUSP e para pessoas trans.",
     detalhe: [
       "Gratuidade para moradores do CRUSP e de outras moradias estudantis e para pessoas trans.",
@@ -735,7 +797,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "lote social trans ingresso gratuidade festa preco gratis"
   },
   {
-    area: "eventos", pagina: 15, titulo: "Comissão Anti-Opressão",
+    area: "eventos", pagina: 106, titulo: "Comissão Anti-Opressão",
     resumo: "CAO identificável nas festas e canal aberto de denúncia.",
     detalhe: [
       "Integrantes com batas circulando durante as festas.",
@@ -745,13 +807,13 @@ window.LUMIAR_PROPOSTAS = [
     busca: "cao assedio seguranca festa reducao danos opressao"
   },
   {
-    area: "eventos", pagina: 15, titulo: "Feedback depois de cada evento",
+    area: "eventos", pagina: 107, titulo: "Feedback depois de cada evento",
     resumo: "Pesquisa aberta para saber o que acertou e o que mudar.",
     detalhe: ["O planejamento das próximas edições parte da experiência de quem foi."],
     busca: "feedback pesquisa evento"
   },
   {
-    area: "eventos", pagina: 16, titulo: "Um HH por mês",
+    area: "eventos", pagina: 109, titulo: "Um HH por mês",
     resumo: "Pelo menos um happy hour por mês, com edições novas.",
     detalhe: [
       "Volta de edições icônicas: HH Darkroom e HHalloween.",
@@ -761,13 +823,13 @@ window.LUMIAR_PROPOSTAS = [
     busca: "hh happy hour sexta festa queer rap trap darkroom halloween rock"
   },
   {
-    area: "eventos", pagina: 16, titulo: "Duas FEAFUNK",
+    area: "eventos", pagina: 108, titulo: "Duas FEAFUNK",
     resumo: "Uma edição por semestre.",
     detalhe: ["Atrações de grande porte, open bar e lote social."],
     busca: "feafunk funk festa"
   },
   {
-    area: "eventos", pagina: 16, titulo: "Calendário de festas",
+    area: "eventos", pagina: 107, titulo: "Calendário de festas",
     resumo: "Cervejada do Imperador, FEA Junina, EletroFEA e Imperatriz.",
     detalhe: [
       "Cervejada do Imperador no começo das aulas, com atlética, bateria e capitães de equipe.",
@@ -778,7 +840,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "cervejada junina eletrofea imperatriz festa"
   },
   {
-    area: "eventos", pagina: 16, titulo: "Festas com outras faculdades",
+    area: "eventos", pagina: 109, titulo: "Festas com outras faculdades",
     resumo: "HH FEAFESP, G4, FEACH e novas parcerias.",
     detalhe: [
       "HH FEAFESP depois da recepção, com os CAs da Unifesp.",
@@ -787,7 +849,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "parceria unifesp g4 feafesp feach"
   },
   {
-    area: "eventos", pagina: 16, titulo: "HH beneficente",
+    area: "eventos", pagina: 110, titulo: "HH beneficente",
     resumo: "Um HH LGBTQIAPN+ com parte do lucro para uma casa de acolhimento.",
     detalhe: ["Usar a força de mobilização dos eventos para apoiar causas sociais."],
     busca: "beneficente doacao lgbt solidario"
@@ -795,7 +857,7 @@ window.LUMIAR_PROPOSTAS = [
 
   /* ---------------- MOBILIZAÇÃO ---------------- */
   {
-    area: "mobilizacao", pagina: 18, titulo: "Debate no dia a dia",
+    area: "mobilizacao", pagina: 97, titulo: "Debate no dia a dia",
     resumo: "Eventos de debate e conscientização ao longo do ano.",
     detalhe: [
       "Temas atuais e o papel que os profissionais formados na FEA ocupam na sociedade.",
@@ -804,19 +866,19 @@ window.LUMIAR_PROPOSTAS = [
     busca: "debate politica conscientizacao"
   },
   {
-    area: "mobilizacao", pagina: 18, titulo: "Ocupar a FEA",
+    area: "mobilizacao", pagina: 97, titulo: "Ocupar a FEA",
     resumo: "Vivência, Meia-Lua e Novão como espaços de convivência crítica.",
     detalhe: ["Atividades diversas e frequentes, sempre com reflexão política."],
     busca: "ocupar vivencia meia-lua novao"
   },
   {
-    area: "mobilizacao", pagina: 18, titulo: "Informação confiável",
+    area: "mobilizacao", pagina: 97, titulo: "Informação confiável",
     resumo: "Acompanhar as decisões da faculdade e contar para todo mundo.",
     detalhe: ["Materiais gráficos e digitais com informações precisas sobre o que acontece na FEA e na USP."],
     busca: "informacao material noticia"
   },
   {
-    area: "mobilizacao", pagina: 18, titulo: "CAVC de volta ao Movimento Estudantil",
+    area: "mobilizacao", pagina: 98, titulo: "CAVC de volta ao Movimento Estudantil",
     resumo: "Retomar o protagonismo do CAVC no ME da USP e do Brasil.",
     detalhe: [
       "Uma posição alternativa, mas complementar em método à atual gestão do DCE.",
@@ -826,7 +888,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "movimento estudantil dce me usp une"
   },
   {
-    area: "mobilizacao", pagina: 19, titulo: "Permanência e ingresso como luta",
+    area: "mobilizacao", pagina: 99, titulo: "Permanência e ingresso como luta",
     resumo: "CRUSP, condições dignas e novas formas de ingresso.",
     detalhe: [
       "Defesa da moradia e do acesso ao CRUSP.",
@@ -836,7 +898,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "permanencia crusp ingresso cotas coletivo"
   },
   {
-    area: "mobilizacao", pagina: 19, titulo: "Federações e conselhos",
+    area: "mobilizacao", pagina: 100, titulo: "Federações e conselhos",
     resumo: "A FEA presente em encontros, congressos e conselhos da área.",
     detalhe: [
       "A nossa continuidade recriou a FENECO, a Federação Nacional dos Estudantes de Economia.",
@@ -859,7 +921,7 @@ window.LUMIAR_PROPOSTAS = [
 
   /* ---------------- COMUNICAÇÃO E VISCONDE ---------------- */
   {
-    area: "comunicacao", pagina: 5, titulo: "Ouvidoria do CAVC",
+    area: "comunicacao", titulo: "Ouvidoria do CAVC",
     resumo: "Um canal permanente para mandar feedback, sugestão e demanda.",
     detalhe: [
       "Nos moldes de uma ouvidoria: alunos avaliam os projetos do CAVC, sugerem iniciativas e apontam o que precisa melhorar na FEA.",
@@ -868,7 +930,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "ouvidoria feedback sugestao reclamacao canal escuta"
   },
   {
-    area: "comunicacao", pagina: 5, titulo: "Nova Secretaria de Comunicação",
+    area: "comunicacao", pagina: 55, titulo: "Nova Secretaria de Comunicação",
     resumo: "No lugar do Marketing, uma secretaria focada em fazer.",
     detalhe: [
       "Posts, reels, textos, design e cobertura, em vez de pesquisa de mercado.",
@@ -878,7 +940,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "comunicacao marketing instagram post reels design entrar"
   },
   {
-    area: "comunicacao", pagina: 5, titulo: "Comunicação mais ágil",
+    area: "comunicacao", titulo: "Comunicação mais ágil",
     resumo: "Templates prontos e posts agendados.",
     detalhe: [
       "Templates padronizados para atender rápido as outras secretarias.",
@@ -888,13 +950,13 @@ window.LUMIAR_PROPOSTAS = [
     busca: "template canva instagram calendario cobertura"
   },
   {
-    area: "comunicacao", pagina: 20, titulo: "Visconde aberto a todos",
+    area: "comunicacao", pagina: 102, titulo: "Visconde aberto a todos",
     resumo: "Equipe editorial transparente para quem quiser escrever.",
     detalhe: ["O jornal da FEA: discussões, arte, piadas internas e experiências das entidades, sempre provocando reflexão."],
     busca: "visconde jornal revista escrever"
   },
   {
-    area: "comunicacao", pagina: 20, titulo: "Visconde também no digital",
+    area: "comunicacao", pagina: 102, titulo: "Visconde também no digital",
     resumo: "O jornal impresso continua, e o digital traz mais constância.",
     detalhe: ["Cobertura mais dinâmica e atualizada do que acontece na USP."],
     busca: "visconde jornal digital"
@@ -902,7 +964,7 @@ window.LUMIAR_PROPOSTAS = [
 
   /* ---------------- GESTÃO INTERNA ---------------- */
   {
-    area: "gestao", pagina: 4, titulo: "Gestão horizontal",
+    area: "gestao", pagina: 53, titulo: "Gestão horizontal",
     resumo: "Acompanhar membros e reuniões para todo mundo trabalhar bem junto.",
     detalhe: [
       "Garantir horizontalidade, respeito e boa convivência.",
@@ -912,7 +974,7 @@ window.LUMIAR_PROPOSTAS = [
     busca: "gestao pessoas horizontal membros"
   },
   {
-    area: "gestao", pagina: 4, titulo: "Formação para quem entra",
+    area: "gestao", pagina: 53, titulo: "Formação para quem entra",
     resumo: "Capacitações em comunicação, planejamento, política e ME.",
     detalhe: [
       "Capacitações em marketing, comunicação, planejamento, política e movimento estudantil.",
@@ -921,23 +983,27 @@ window.LUMIAR_PROPOSTAS = [
     busca: "capacitacao treinamento formacao entrar gestao"
   },
   {
-    area: "gestao", titulo: "Gestão que cabe na rotina de quem trabalha",
-    resumo: "Um CAVC organizado para a FEA pós-cotas, em que estatutários também podem trabalhar.",
+    area: "gestao", pagina: 45, titulo: "Gestão que cabe na rotina de quem trabalha",
+    resumo: "Cinco estatutários em vez de três, num modelo pensado para a FEA pós-cotas.",
     detalhe: [
-      "As cotas trouxeram para a FEA muitos estudantes que estudam e trabalham ao mesmo tempo. A estrutura do CAVC precisa acompanhar essa realidade.",
-      "Adaptar o funcionamento da gestão para que quem tem estágio ou emprego também possa assumir um cargo estatutário.",
-      "Responsabilidades melhor divididas e uma rotina de trabalho pensada para caber em agendas diferentes."
+      "O estatuto prevê presidente, vice e tesoureiro. A Lumiar terá cinco estatutários: presidente, vice-presidente, duas co-tesoureiras e uma secretária-geral.",
+      "O modelo antigo foi feito antes das cotas. Dividir as responsabilidades evita sobrecarga e é mais inclusivo, principalmente para estudantes de baixa renda e que trabalham.",
+      "Assim, pessoas de realidades diferentes podem concorrer, seja qual for a sua vida pessoal e profissional."
     ],
-    busca: "trabalha trabalho emprego estagio estatutario pos-cotas cotas rotina horario gestao"
+    busca: "trabalha trabalho emprego estagio estatutario pos-cotas cotas rotina gestao cinco estatutarios sobrecarga"
   }
 ];
 
 /* "O que a continuidade já fez": aparece antes das propostas. */
 window.LUMIAR_CONQUISTAS = [
-  { marca: "Cotas", titulo: "Cotas na USP", texto: "A adoção das cotas na USP foi fruto da mobilização da continuidade da qual fazemos parte, com o movimento estudantil nas ruas." },
+  { marca: "Cotas", titulo: "Cotas na FEA", texto: "As cotas PPI, de escola pública e por renda vieram do esforço de gestões do CAVC. A FEA foi o último instituto da USP a aprovar cotas." },
+  { marca: "2021", titulo: "Cotas por renda", texto: "Pela primeira vez, a FEA aprovou cotas por renda, com forte articulação do CAVC nos colegiados." },
   { marca: "2018", titulo: "Atuária no nome da FEA", texto: "Ciências Atuariais entrou no nome oficial da faculdade graças à atuação estudantil." },
-  { marca: "2021", titulo: "Cotas por renda", texto: "Pela primeira vez, a FEA aprovou cotas por renda, com articulação do CAVC nos colegiados." },
   { marca: "Economia", titulo: "Fim dos créditos fantasma", texto: "A representação discente apontou créditos não contabilizados na grade que poderiam travar o diploma de muita gente." },
+  { marca: "PAPFE", titulo: "Reajuste anual do PAPFE", texto: "Conquistado na greve de 2026, em grande parte graças ao trabalho investigativo do CAVC desde o começo do ano." },
+  { marca: "FAPESP", titulo: "Bolsas defendidas na Justiça", texto: "O CAVC entrou com ação judicial contra os cortes nas bolsas FAPESP e venceu." },
+  { marca: "Plano Diretor", titulo: "A FEA planejada com todos", texto: "O Plano Diretor da FEA foi construído com consulta a todos os setores, por iniciativa do CAVC." },
+  { marca: "800+", titulo: "Bolsistas no CAVC Idiomas", texto: "Desde 2021, mais de 800 estudantes estudaram idiomas com bolsa." },
   { marca: "100+", titulo: "Inscritos no Nivelamento", texto: "O Nivelamento Matemático foi criado por Camilly Nobre e Esther Barletta, candidatas a presidente e secretária-geral." },
   { marca: "FENECO", titulo: "Federação recriada", texto: "A continuidade recriou a Federação Nacional dos Estudantes de Economia." },
   { marca: "2028", titulo: "ENECO na FEA", texto: "O Encontro Nacional dos Estudantes de Economia vai acontecer na FEA." },
@@ -955,7 +1021,7 @@ window.LUMIAR_ESTRUTURA = [
     itens: [
       { nome: "Gestão de Pessoas", area: "gestao", resumo: "Cuida para que a gestão seja um bom lugar de trabalhar: integração, acompanhamento dos membros e capacitações." },
       { nome: "Comunicação", area: "comunicacao", resumo: "Nova secretaria, no lugar da de Marketing: cria conteúdo, cobre eventos, cuida da identidade do CAVC e mantém a ouvidoria." },
-      { nome: "Finanças", area: "financas", resumo: "Cuida do dinheiro do CAVC com a tesouraria: contas abertas, orçamento planejado com as áreas e verba de editais e parceiros." },
+      { nome: "Finanças", area: "financas", resumo: "Braço operacional da Tesouraria: contas organizadas, balanços trimestrais, captação de parcerias e gestão da Vivência e do CAVC Idiomas." },
       { nome: "Entidades", area: "entidades", resumo: "Une as mais de vinte entidades da FEA: Conselho de Entidades, créditos AEX e mais autonomia e espaço." },
       { nome: "Representação Discente", area: "rd", resumo: "Leva a voz dos estudantes aos colegiados da FEA, com consulta aos alunos e transparência sobre o que se decide." }
     ]
@@ -1015,9 +1081,29 @@ window.LUMIAR_FAQ = [
     busca: "votar eleicao quando onde urna data"
   },
   {
-    pergunta: "A carta programa está pronta?",
-    resposta: "Ainda estamos fechando a carta. O que está neste site é um resumo da versão atual, e as propostas podem mudar a partir das conversas com vocês.",
+    pergunta: "Onde leio a carta programa completa?",
+    resposta: "A carta programa completa, com 113 páginas, está aqui no site em PDF. Cada proposta tem um botão que abre a página certa da carta.",
     busca: "carta programa pronta pdf"
+  },
+  {
+    pergunta: "Qual é o posicionamento político da Lumiar?",
+    resposta: "Construímos o Campo Democrático Popular, com atuação alinhada à esquerda, democrática e independente. Defendemos a democracia, a universidade pública, a diversidade e a transformação social, sempre com espaço aberto ao debate entre diferentes perspectivas.",
+    busca: "posicionamento politica esquerda campo democratico popular ideologia partido lado"
+  },
+  {
+    pergunta: "Por que a Lumiar tem cinco estatutários?",
+    resposta: "O estatuto prevê presidente, vice e tesoureiro, num modelo feito antes das cotas. A Lumiar terá cinco estatutários (presidente, vice, duas co-tesoureiras e uma secretária-geral) para dividir responsabilidades, evitar sobrecarga e permitir que estudantes de baixa renda e que trabalham também possam assumir a diretoria.",
+    busca: "cinco estatutarios diretoria por que modelo cotas sobrecarga"
+  },
+  {
+    pergunta: "O que é o CAVC Idiomas?",
+    resposta: "É a escola de idiomas do CAVC, fundada em 1989. Hoje tem mais de 40 funcionários e mais de 200 alunos, e desde 2021 mais de 800 estudantes estudaram lá com bolsa. A Lumiar quer ampliar as bolsas e abrir novos cursos, como Libras, Excel e inglês para proficiência.",
+    busca: "cavc idiomas escola ingles curso lingua bolsa"
+  },
+  {
+    pergunta: "O que a FEA conquistou na greve de 2026?",
+    resposta: "A FEA teve o maior quórum em assembleia do campus e o segundo maior da USP. O comando de greve conquistou compromissos com as entidades, a manutenção da Vivência, o registro de entidades durante o ano todo e o reajuste anual do PAPFE.",
+    busca: "greve 2026 assembleia comando conquista papfe reajuste"
   },
   {
     pergunta: "Como falo com a chapa?",
@@ -1025,3 +1111,39 @@ window.LUMIAR_FAQ = [
     busca: "contato falar email whatsapp telefone sugerir ideia ajudar participar"
   }
 ];
+
+/* Conjuntura (carta programa, p. 20 a 24). Aparece como seção própria. */
+window.LUMIAR_CONJUNTURA = {
+  pagina: 20,
+  partes: [
+    {
+      titulo: "O mundo",
+      texto: "2026 começou com a invasão da Venezuela pelos EUA de Donald Trump. Em seguida vieram a Guerra do Irã, a escalada das agressões à Palestina e ao Líbano e vitórias de candidatos apoiados por Trump na América Latina."
+    },
+    {
+      titulo: "O Brasil",
+      texto: "O governo Lula teve problemas urgentes, mas também avanços como a expansão do Bolsa Família, as reformas Tributária e do Imposto de Renda, a queda do desmatamento, a valorização do salário mínimo, o fim das bets e o fim da escala 6x1. A reeleição de Lula foi uma luta popular contra o avanço da extrema direita, com a juventude e os estudantes nas ruas. O CAVC participou com manifestos pela soberania nacional junto à UNE, o Festival da Palestina, o Festival Paul Singer e o grupo USP Butantã com Lula. Mas também foi eleito o Congresso mais conservador da história."
+    },
+    {
+      titulo: "São Paulo",
+      texto: "Tarcísio de Freitas foi reeleito contra Fernando Haddad. Seu governo cortou bolsas FAPESP (o CAVC entrou na Justiça e venceu) e não propôs nada para o financiamento das universidades estaduais, ameaçado pelo fim progressivo do ICMS. Haddad, acatando proposta do CAVC e de outras organizações estudantis, propôs vincular o orçamento das universidades à receita líquida do estado."
+    },
+    {
+      titulo: "A USP",
+      texto: "As greves estudantil e de servidores expuseram bandejões, circulares e espaços de vivência insuficientes, ameaças aos espaços estudantis, más condições de trabalho e um auxílio de permanência defasado, enquanto foi aprovado um pacote de mais de meio bilhão de reais em gratificações a docentes."
+    },
+    {
+      titulo: "A FEA",
+      texto: "A FEA teve o maior quórum em assembleia do campus e o segundo maior da USP. O comando de greve conquistou compromissos com as entidades, a manutenção da Vivência e o reajuste anual do PAPFE. Nas eleições da Diretoria e dos departamentos, a representação discente garantiu compromissos com os estudantes e com a transformação dos espaços pelo Plano Diretor, e na Administração defende que a grade não seja reformada sem diálogo."
+    }
+  ],
+  desafios: [
+    "Defender a democracia e a soberania nacional com mobilização popular.",
+    "Garantir as conquistas da greve com a nova diretoria da FEA.",
+    "Construir uma resposta ao fim do ICMS para financiar as universidades.",
+    "Uma reforma da segurança da FEA, feita pelos três setores.",
+    "Executar o Plano Diretor atendendo às demandas da comunidade.",
+    "Nenhuma reforma da grade de Administração sem amplo diálogo com os alunos."
+  ],
+  autocritica: "A atual gestão teve méritos, mas também falhas, em especial na comunicação e no período sem direção sólida depois da renúncia da presidente eleita. É consciente disso que a Lumiar quer cuidar do CAVC em seus 80 anos."
+};
