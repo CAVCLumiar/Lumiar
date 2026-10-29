@@ -27,6 +27,7 @@ window.LUMIAR_CONFIG = {
 
   // Carta programa em PDF (versão comprimida para a web). Os botões "ler na carta" usam este arquivo.
   cartaUrl: "carta/carta-programa-lumiar-2027.pdf",
+  cartaInfo: "PDF · 113 páginas · 3,4 MB",
 
   // Eleição do CAVC
   eleicao: {

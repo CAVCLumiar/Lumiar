@@ -36,9 +36,9 @@
         <a href="#manifesto">Manifesto</a>
         <a href="#conjuntura">Conjuntura</a>
         <a href="#propostas">Propostas</a>
+        <a href="#carta">Carta</a>
         <a href="#estrutura">Estrutura</a>
         <a href="#pergunte">Lumis</a>
-        <a href="#faq">Dúvidas</a>
         <a href="#contato">Contato</a>
         <a class="topo__insta" data-config-href="instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram da Lumiar">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -112,7 +112,10 @@
         <h3 class="carta-estudantes__titulo" id="carta-titulo"></h3>
         <p class="carta-estudantes__dica">Abra cada parte para ler.</p>
         <div class="carta-estudantes__partes" id="carta-partes"></div>
-        <a class="botao" data-config-href="manifestoPdf" href="#" target="_blank" rel="noopener">Abrir o manifesto em PDF</a>
+        <div class="heroi__acoes heroi__acoes--centro">
+          <a class="botao" data-config-href="manifestoPdf" href="#" download="Manifesto-Lumiar.pdf">Baixar o manifesto</a>
+          <a class="botao botao--contorno" data-config-href="manifestoPdf" href="#" target="_blank" rel="noopener">Ler no navegador</a>
+        </div>
       </div>
 
     </section>
@@ -177,6 +180,27 @@
         <p class="contagem" id="contagem" aria-live="polite"></p>
         <div class="areas" id="lista-propostas"></div>
         <p class="vazio" id="vazio" hidden></p>
+      </div>
+    </section>
+
+    <!-- CARTA PROGRAMA -->
+    <section class="secao secao--marrom" id="carta">
+      <div class="dentro carta-sec">
+        <a class="carta-sec__capa" data-config-href="cartaUrl" href="#" target="_blank" rel="noopener" aria-label="Abrir a carta programa">
+          <img src="assets/img/carta-capa.jpg" alt="Capa da carta programa da Lumiar" width="620" height="877" loading="lazy">
+        </a>
+        <div class="carta-sec__texto">
+          <p class="sobretitulo">Carta programa</p>
+          <h2>Tudo o que a Lumiar pensa e propõe, num documento só.</h2>
+          <p>A carta foi escrita por quem constrói o CAVC hoje e parte do nosso mote. Reúne o manifesto, a conjuntura, como o Centro Acadêmico vai funcionar e cada projeto das secretarias e áreas para 2027.</p>
+          <div class="heroi__acoes">
+            <a class="botao" id="carta-baixar" data-config-href="cartaUrl" href="#" download="Carta-programa-Lumiar-2027.pdf">Baixar a carta programa</a>
+            <a class="botao botao--contorno" data-config-href="cartaUrl" href="#" target="_blank" rel="noopener">Ler no navegador</a>
+          </div>
+          <p class="carta-sec__info" id="carta-info"></p>
+          <h3 class="carta-sec__sumario-titulo">Sumário</h3>
+          <div class="sumario" id="sumario"></div>
+        </div>
       </div>
     </section>
 
@@ -283,6 +307,7 @@
         <a href="#propostas">Propostas</a>
         <a href="#chapa">A chapa</a>
         <a href="#pergunte">Lumis</a>
+        <a href="#faq">Dúvidas</a>
         <a data-config-href="cartaUrl" href="#" target="_blank" rel="noopener">Carta programa (PDF)</a>
         <a data-config-href="manifestoPdf" href="#" target="_blank" rel="noopener">Manifesto (PDF)</a>
       </nav>

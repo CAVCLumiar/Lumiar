@@ -749,3 +749,37 @@ button.org__frente:hover { border-color: var(--marrom); transform: translateY(-2
   transition: transform 0.15s ease, background 0.15s ease;
 }
 .topo-voltar:hover { transform: translateY(-3px); background: var(--marrom-escuro); }
+
+/* Carta programa: capa, download e sumário */
+.carta-sec { display: grid; grid-template-columns: minmax(220px, 0.8fr) 1.6fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
+.carta-sec__capa { display: block; position: sticky; top: 100px; }
+.carta-sec__capa img {
+  width: 100%; border-radius: 10px;
+  box-shadow: 0 24px 50px -18px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(244, 174, 50, 0.25);
+  transform: rotate(-2deg); transition: transform 0.25s ease;
+}
+.carta-sec__capa:hover img { transform: rotate(0deg) translateY(-4px); }
+.carta-sec__texto > p { max-width: 60ch; }
+.carta-sec__info { font-size: 0.9rem; opacity: 0.75; margin-top: 12px; }
+.carta-sec__sumario-titulo { color: var(--mostarda); font-size: 1.2rem; margin: 28px 0 12px; }
+.secao--marrom .botao { background: var(--mostarda); border-color: var(--mostarda); color: var(--marrom-escuro); }
+.secao--marrom .botao:hover { background: var(--creme); border-color: var(--creme); }
+.secao--marrom .botao--contorno { background: transparent; color: var(--mostarda); }
+.secao--marrom .botao--contorno:hover { background: var(--mostarda); color: var(--marrom-escuro); }
+.sumario { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px 28px; }
+.sumario__grupo strong {
+  display: block; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mostarda); margin-bottom: 6px;
+}
+.sumario ul { list-style: none; margin: 0; padding: 0; }
+.sumario a {
+  display: flex; align-items: baseline; gap: 8px; padding: 5px 0; text-decoration: none; color: var(--creme);
+  border-bottom: 1px dashed rgba(244, 174, 50, 0.25); font-size: 0.95rem;
+}
+.sumario a span:first-child { flex: 1; }
+.sumario a:hover { color: var(--mostarda); }
+.sumario__pg { font-variant-numeric: tabular-nums; opacity: 0.7; font-size: 0.85rem; }
+.heroi__acoes--centro { justify-content: center; }
+@media (max-width: 760px) {
+  .carta-sec { grid-template-columns: 1fr; }
+  .carta-sec__capa { position: static; width: min(240px, 70%); margin-inline: auto; }
+}

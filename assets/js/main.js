@@ -302,6 +302,22 @@
     }
   }
 
+  /* ---------- Carta programa: sumário ---------- */
+  if (CFG.cartaUrl) {
+    if (CFG.cartaInfo) $("#carta-info").textContent = CFG.cartaInfo;
+    (window.LUMIAR_SUMARIO || []).forEach(function (g) {
+      var ul = el("ul");
+      g.itens.forEach(function (it) {
+        ul.appendChild(el("li", {}, [el("a", { href: CFG.cartaUrl + "#page=" + it[1], target: "_blank", rel: "noopener" }, [
+          el("span", { texto: it[0] }), el("span", { classe: "sumario__pg", texto: "p. " + it[1] })
+        ])]));
+      });
+      $("#sumario").appendChild(el("div", { classe: "sumario__grupo" }, [el("strong", { texto: g.parte }), ul]));
+    });
+  } else {
+    $("#carta").hidden = true;
+  }
+
   /* ---------- O que a continuidade já fez ---------- */
   (window.LUMIAR_CONQUISTAS || []).forEach(function (c) {
     $("#conquistas-lista").appendChild(el("div", { classe: "conquista" }, [

@@ -1082,8 +1082,8 @@ window.LUMIAR_FAQ = [
   },
   {
     pergunta: "Onde leio a carta programa completa?",
-    resposta: "A carta programa completa, com 113 páginas, está aqui no site em PDF. Cada proposta tem um botão que abre a página certa da carta.",
-    busca: "carta programa pronta pdf"
+    resposta: "A carta programa completa, com 113 páginas, está na seção Carta programa: dá para baixar o PDF ou ler no navegador, com sumário clicável. Cada proposta também tem um botão que abre a página certa da carta.",
+    busca: "carta programa pronta pdf baixar download ler sumario documento"
   },
   {
     pergunta: "Qual é o posicionamento político da Lumiar?",
@@ -1147,3 +1147,13 @@ window.LUMIAR_CONJUNTURA = {
   ],
   autocritica: "A atual gestão teve méritos, mas também falhas, em especial na comunicação e no período sem direção sólida depois da renúncia da presidente eleita. É consciente disso que a Lumiar quer cuidar do CAVC em seus 80 anos."
 };
+
+/* Sumário da carta programa. pagina = página do PDF (a que o leitor de PDF mostra). */
+window.LUMIAR_SUMARIO = [
+  { parte: "Apresentação", itens: [["Apresentação", 4], ["Manifesto", 7], ["Conjuntura", 20]] },
+  { parte: "Noções de CAVC", itens: [["Movimento Estudantil", 26], ["Tripé Universitário", 31], ["Acesso e Permanência", 34], ["Espaços Estudantis", 37]] },
+  { parte: "Objetivos e projetos de gestão", itens: [["Vivência Universitária", 40], ["Acolhimento de Caloures", 42]] },
+  { parte: "Estatutários e Tesouraria", itens: [["Estatutários", 45], ["Tesouraria e CAVC Idiomas", 46]] },
+  { parte: "Secretarias", itens: [["Gestão de Pessoas", 53], ["Comunicação", 55], ["Finanças", 56], ["Entidades", 61], ["Representação Discente", 65]] },
+  { parte: "Áreas", itens: [["Acadêmica", 73], ["Acesso, Permanência e Saúde Mental", 87], ["Mobilização", 94], ["Visconde", 102], ["Eventos", 104]] }
+];
