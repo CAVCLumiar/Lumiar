@@ -369,29 +369,8 @@
   var MAN = window.LUMIAR_MANIFESTO;
   if (MAN) {
     $("#manifesto-titulo").textContent = MAN.titulo;
-    // Mostra o começo e guarda o resto atrás do "Continuar lendo"
-    var VISIVEIS = 4;
-    MAN.abertura.forEach(function (t, i) {
-      $(i < VISIVEIS ? "#manifesto-abertura" : "#manifesto-mais").appendChild(paragrafo(t));
-    });
-    var botaoMais = $("#manifesto-mais-botao");
-    if (MAN.abertura.length <= VISIVEIS) botaoMais.hidden = true;
-    botaoMais.addEventListener("click", function () {
-      var aberto = alternar(botaoMais, $("#manifesto-mais"));
-      botaoMais.textContent = aberto ? "Mostrar menos" : "Continuar lendo";
-    });
+    MAN.abertura.forEach(function (t) { $("#manifesto-abertura").appendChild(paragrafo(t)); });
     $("#manifesto-assinatura").textContent = MAN.assinatura;
-    $("#carta-titulo").textContent = MAN.cartaTitulo;
-    MAN.carta.forEach(function (parte, i) {
-      var b = el("button", { type: "button", classe: "parte__cabeca", "aria-expanded": "false", "aria-controls": "parte-" + i }, [
-        el("span", { classe: "parte__num", texto: String(i + 1) }),
-        el("span", { texto: parte.titulo })
-      ]);
-      var corpo = el("div", { classe: "parte__corpo", id: "parte-" + i, hidden: "" });
-      parte.paragrafos.forEach(function (t) { corpo.appendChild(paragrafo(t)); });
-      b.addEventListener("click", function () { alternar(b, corpo); });
-      $("#carta-partes").appendChild(el("div", { classe: "parte" }, [b, corpo]));
-    });
   }
 
   /* ---------- Chapa ---------- */
@@ -776,7 +755,7 @@
     // Manifesto
     function (q, todas) {
       if (!tem(todas, ["manifest"])) return null;
-      var out = [el("p", { texto: "O manifesto diz por que somos Lumiar: iluminar o presente e construir o futuro, com uma FEA mais plural, inclusiva e acolhedora, e um CAVC perto dos estudantes. Ele também traz a Carta aos estudantes, sobre política no coletivo, permanência, entidades, representação e continuidade crítica." })];
+      var out = [el("p", { texto: "O manifesto diz por que somos Lumiar: iluminar o presente e construir o futuro, com uma FEA mais plural, inclusiva e acolhedora, e um CAVC perto dos estudantes. Ele também fala de política no coletivo, permanência, entidades, representação e continuidade crítica." })];
       var bts = [irPara("manifesto", "Ler aqui no site →")];
       if (CFG.manifestoPdf) bts.push(el("a", { href: CFG.manifestoPdf, target: "_blank", rel: "noopener", texto: "Abrir o PDF" }));
       out.push(listaBotoes("", bts));
